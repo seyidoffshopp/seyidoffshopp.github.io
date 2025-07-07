@@ -1,0 +1,557 @@
+/* Ümumi qlobal stillər */
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #28a745;
+    --dark-bg: #333;
+    --light-text: #fff;
+    --grey-bg: #f4f4f4;
+    --border-color: #ddd;
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --shadow-medium: rgba(0, 0, 0, 0.2);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: var(--grey-bg);
+    color: #333;
+}
+
+/* Header və Navigasiya */
+header {
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px var(--shadow-light);
+    position: relative;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+nav .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+nav ul { /* Normal desktop menyu */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    color: var(--light-text);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 0;
+    transition: color 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* Ümumi main konteyner */
+main {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 30px auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px var(--shadow-light);
+}
+
+h1, h2, h3 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* Banner Stilləri */
+.banner-section {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.main-banner {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.main-banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+.main-banner .banner-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5); /* Şəkilin üstündə qaranlıq overlay */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+}
+
+.main-banner h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.main-banner p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #eee;
+}
+
+.banner-button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.banner-button:hover {
+    background-color: #0056b3;
+}
+
+.small-banners {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.small-banner-item {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.small-banner-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+}
+
+.small-banner-item h3 {
+    font-size: 1.2rem;
+    padding: 15px;
+    margin: 0;
+    color: #333;
+}
+
+/* Xidmətlər Bölməsi */
+.services-section {
+    padding: 20px;
+    margin-bottom: 40px;
+    border: 1px dashed var(--border-color);
+    border-radius: 8px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+.services-section p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.8;
+}
+
+/* Oyun Siyahısı (Game Grid) */
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Daha geniş kartlar */
+    gap: 30px; /* Daha böyük boşluq */
+    padding: 20px 0;
+}
+
+.game-card {
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 4px 10px var(--shadow-light);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px var(--shadow-medium);
+}
+
+.game-card img {
+    max-width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.game-card:hover img {
+    transform: scale(1.05);
+}
+
+.game-card h3 {
+    font-size: 1.4rem;
+    margin: 10px 0;
+    color: var(--primary-color);
+}
+
+.game-card p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+.game-card button {
+    background-color: var(--secondary-color);
+    color: var(--light-text);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.game-card button:hover {
+    background-color: #218838;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 25px;
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+    margin-top: 40px;
+    box-shadow: 0 -2px 5px var(--shadow-light);
+    border-radius: 0 0 10px 10px;
+}
+
+/* Səbət Səhifəsi üçün stillər */
+.cart-item {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    padding: 15px 0;
+    margin-bottom: 15px;
+}
+.cart-item:last-child {
+    border-bottom: none;
+}
+.cart-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+.cart-item div {
+    flex-grow: 1;
+    text-align: left;
+}
+.cart-item h4 {
+    margin: 0 0 5px 0;
+    color: #333;
+    font-size: 1.2rem;
+}
+.cart-item p {
+    margin: 0;
+    color: #555;
+    font-weight: normal;
+}
+.cart-item button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+.cart-item button:hover {
+    background-color: #c82333;
+}
+.cart-summary {
+    text-align: right;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px solid var(--border-color);
+}
+.cart-summary h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+.cart-summary span {
+    color: var(--primary-color);
+}
+.cart-summary button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.cart-summary button:hover {
+    background-color: #0056b3;
+}
+
+/* Login/Qeydiyyat Stilləri (Auth Container) */
+.auth-container {
+    max-width: 450px;
+    margin: 50px auto;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px var(--shadow-light);
+    text-align: center;
+}
+.auth-container h2 {
+    margin-bottom: 30px;
+    color: var(--primary-color);
+    font-size: 1.8rem;
+}
+.auth-container input[type="text"],
+.auth-container input[type="password"],
+.auth-container input[type="email"] {
+    width: calc(100% - 24px);
+    padding: 14px;
+    margin-bottom: 18px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 1.05rem;
+}
+.auth-container button {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    border: none;
+    padding: 14px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.15rem;
+    width: 100%;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+.auth-container button:hover {
+    background-color: #0056b3;
+}
+.toggle-form-link {
+    margin-top: 25px;
+    font-size: 0.95rem;
+    color: #555;
+}
+.toggle-form-link a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+.toggle-form-link a:hover {
+    text-decoration: underline;
+}
+
+/* Admin Panel Stilləri */
+.admin-dashboard {
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px var(--shadow-light);
+}
+.admin-dashboard h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--primary-color);
+    font-size: 2rem;
+}
+.order-list {
+    display: grid;
+    gap: 25px;
+}
+.order-item {
+    background-color: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    box-shadow: 0 2px 8px var(--shadow-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.order-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px var(--shadow-medium);
+}
+.order-item h3 {
+    margin: 0;
+    color: var(--dark-bg);
+    font-size: 1.3rem;
+    border-bottom: 1px dashed var(--border-color);
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+.order-item p {
+    margin: 0;
+    font-size: 1rem;
+    color: #444;
+}
+.order-item .status {
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 4px;
+    display: inline-block;
+}
+.order-item .status.pending {
+    background-color: #ffc107;
+    color: #333;
+}
+.order-item .status:not(.pending) {
+    background-color: var(--secondary-color);
+    color: var(--light-text);
+}
+.order-item button {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+.order-item button:hover {
+    background-color: #0056b3;
+}
+.order-item button.cancel {
+    background-color: #dc3545;
+}
+.order-item button.cancel:hover {
+    background-color: #c82333;
+}
+
+/* Əlaqə Səhifəsi Stilləri */
+.contact-container {
+    max-width: 650px; /* Genişlənir */
+    margin: 50px auto;
+    padding: 40px; /* Padding artır */
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px var(--shadow-light);
+    text-align: center;
+}
+.contact-container h2 {
+    margin-bottom: 30px;
+    color: var(--primary-color);
+    font-size: 2rem;
+}
+.contact-container p {
+    margin-bottom: 25px;
+    line-height: 1.7;
+    font-size: 1.05rem;
+}
+.contact-form label {
+    display: block;
+    text-align: left;
+    margin-bottom: 10px; /* Boşluq artır */
+    font-weight: bold;
+    color: #333;
+    font-size: 1.05rem;
+}
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: calc(100% - 24px); /* Paddingə görə düzəliş */
+    padding: 14px; /* Padding artır */
+    margin-bottom: 20px; /* Boşluq artır */
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 1.05rem;
+}
+.contact-form textarea {
+    min-height: 120px;
+}
+.contact-form button {
+    background-color: var(--secondary-color);
+    color: var(--light-text);
+    border: none;
+    padding: 14px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.15rem;
+    width: 100%;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+.contact-form button:hover {
+    background-color: #218838;
+}
+/* SEYIDOFF_SHOPP İnformasiya Banneri Stilləri */
+.info-banner-top {
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+    padding: 30px 20px;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+.info-banner-top h2 {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+.info-banner-top p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #eee;
+}
+.info-banner-top a {
+    color: var(--secondary-color); /* Link rəngi */
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.info-banner-top a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
