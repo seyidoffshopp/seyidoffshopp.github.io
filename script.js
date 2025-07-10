@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Hamburger Menyu Funksionallığı
+    // Hamburger Menyu Funksionallığı Başlanğıcı
     const hamburger = document.querySelector('.hamburger-menu');
     const navMenu = document.querySelector('.main-nav');
     const closeMenuBtn = document.querySelector('.close-menu-btn');
@@ -12,8 +12,9 @@ document.addEventListener('DOMContentLoaded', () => {
             navMenu.classList.remove('active');
         });
     }
+    // Hamburger Menyu Funksionallığı Sonu
 
-    // Şəxsi Kabinet Modal Funksionallığı
+    // Şəxsi Kabinet Modal Funksionallığı Başlanğıcı
     const personalCabinetBtn = document.getElementById('personal-cabinet-btn');
     const balanceAddButton = document.querySelector('.bottom-nav .balance-add-button');
     const personalCabinetModal = document.getElementById('personal-cabinet-modal');
@@ -56,15 +57,16 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+    // Şəxsi Kabinet Modal Funksionallığı Sonu
 
-    // Oyun/Xidmət Listinqi Funksionallığı
-    const gameListing = document.getElementById('game-listing');
+    // Oyun/Xidmət Məlumatları (Şəkil adlarını yoxlayın!)
+    const gameListing = document.getElementById('game-listing'); // Bu ID index.html-də olmalıdır!
 
     const games = [
         {
             id: 1,
             name: 'FREE FIRE DIAMOND',
-            image: 'ff.png',
+            image: 'ff.png', // Şəkil faylının adı və yolu düzgün olmalıdır
             description: 'Free Fire üçün diamond paketi. Dərhal hesabınıza yükləyin!',
             prices: [
                 { quantity: 100, amount: 2.00 }, { quantity: 210, amount: 4.00 },
@@ -81,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             id: 2,
             name: 'PUBG MOBILE UC',
-            image: 'pubg.jpg',
+            image: 'pubg.jpg', // Şəkil faylının adı və yolu düzgün olmalıdır
             description: 'PUBG Mobile üçün UC (Unknown Cash) alın və oyununuzu təkmilləşdirin.',
             prices: [
                 { quantity: 63, amount: 2 }, { quantity: 120, amount: 4 },
@@ -96,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             id: 3,
             name: 'TIK TOK JETON',
-            image: 'ttjeton1.jpg',
+            image: 'ttjeton1.jpg', // Şəkil faylının adı və yolu düzgün olmalıdır
             description: 'TikTok-da canlı yayımlarda hədiyyə göndərmək üçün jetonlar.',
             prices: [
                 { quantity: 105, amount: 3 }, { quantity: 215, amount: 5 },
@@ -108,9 +110,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     ];
 
+    // Oyunları göstərən funksiya
     function displayGames() {
-        if (gameListing) {
-            gameListing.innerHTML = '';
+        if (gameListing) { // gameListing elementinin mövcudluğunu yoxlayın
+            gameListing.innerHTML = ''; // Mövcud "Oyunlar yüklənir..." mətnini təmizlə
             games.forEach(game => {
                 const gameCard = document.createElement('div');
                 gameCard.classList.add('game-card');
@@ -126,8 +129,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    displayGames();
+    displayGames(); // Səhifə yüklənəndə oyunları göstər
 
+    // game-detail.html səhifəsi üçün JavaScript məntiqi Başlanğıcı
     const gameDetailContainer = document.getElementById('game-detail-container');
     if (gameDetailContainer) {
         const urlParams = new URLSearchParams(window.location.search);
@@ -143,7 +147,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             let purchaseOptionsHtml = '';
             if (game.type === 'id_input') {
-                // DolphGame-dəki ödəniş modalına bənzər yeni HTML strukturu
                 purchaseOptionsHtml = `
                     <div class="purchase-options">
                         <label for="gameIdInput">Player ID:</label>
@@ -178,7 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <div class="method-name">M10</div>
                                 <div class="method-desc">Elektron pul kisəsi</div>
                             </div>
-                             </div>
+                        </div>
 
                         <div class="order-buttons">
                             <button class="order-confirm-button" id="orderButton">Sifariş et</button>
@@ -196,7 +199,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         </a>
                     </div>
                 `;
-            } else {
+            } else { // Digər oyun növləri üçün standart forma
                 purchaseOptionsHtml = `
                     <div class="purchase-options">
                         <input type="text" placeholder="İstifadəçi ID / Nick">
@@ -213,15 +216,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 ${purchaseOptionsHtml}
             `;
 
-            // JavaScript məntiqi (sayı artırma/azaltma və ödəniş seçimi)
+            // Miqdar artırma/azaltma və ödəniş seçimi üçün event listenerlər
             if (game.type === 'id_input') {
                 const quantityDisplay = gameDetailContainer.querySelector('.quantity-display');
                 const minusBtn = gameDetailContainer.querySelector('.minus-btn');
                 const plusBtn = gameDetailContainer.querySelector('.plus-btn');
                 const currentPriceSpan = gameDetailContainer.querySelector('.current-price');
-                let currentQuantityIndex = 0; // Başlanğıc olaraq ilk qiymət
+                let currentQuantityIndex = 0;
 
-                // Qiymətin başlanğıc dəyərini təyin edin
+                // Başlanğıc qiyməti və miqdarı təyin et
                 if (game.prices.length > 0) {
                     currentPriceSpan.textContent = `${game.prices[currentQuantityIndex].amount} Azn`;
                     quantityDisplay.textContent = game.prices[currentQuantityIndex].quantity;
@@ -248,7 +251,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     item.addEventListener('click', () => {
                         paymentMethodItems.forEach(other => other.classList.remove('selected'));
                         item.classList.add('selected');
-                        // Burada seçilən ödəniş metodu ilə bağlı hər hansı bir məntiq əlavə edə bilərsiniz
                         console.log('Seçilən ödəniş metodu:', item.dataset.method);
                     });
                 });
@@ -263,19 +265,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
                         if (gameIdInput && selectedMethod) {
                             alert(`Sifarişiniz qəbul edildi!\nOyun: ${game.name}\nPlayer ID: ${gameIdInput}\nSeçilən Miqdar: ${selectedQuantity}\nÖdəniləcək Məbləğ: ${selectedPrice}\nÖdəniş Üsulu: ${selectedMethod}`);
-                            // Burada sifariş məlumatlarını serverə göndərmək üçün AJAX/Fetch API istifadə edə bilərsiniz.
                         } else {
                             alert("Zəhmət olmasa, Player ID-ni daxil edin və ödəniş üsulunu seçin.");
                         }
                     });
                 }
                 
-                // Çıxış düyməsi
                 const cancelButton = gameDetailContainer.querySelector('.order-cancel-button');
                 if(cancelButton) {
                     cancelButton.addEventListener('click', () => {
                         alert('Sifariş ləğv edildi.');
-                        // Əgər səhifəni dəyişmək istəyirsinizsə: window.location.href = 'index.html';
                     });
                 }
             }
@@ -284,4 +283,5 @@ document.addEventListener('DOMContentLoaded', () => {
             gameDetailContainer.innerHTML = '<p>Oyun tapılmadı.</p>';
         }
     }
+    // game-detail.html səhifəsi üçün JavaScript məntiqi Sonu
 });
