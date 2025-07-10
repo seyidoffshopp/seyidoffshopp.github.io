@@ -126,7 +126,7 @@ header {
 
 /* Hamburger menyu stili */
 .hamburger-menu {
-    display: none; /* Masaüstündə gizli qalacaq */
+    display: none;
     background: none;
     border: none;
     cursor: pointer;
@@ -135,8 +135,8 @@ header {
     color: #333;
     z-index: 1001;
     transition: transform 0.4s;
-    position: absolute; /* header-top-a nisbətən yerləşdirmə */
-    right: 15px; /* Sağdan məsafə */
+    position: absolute;
+    right: 15px;
     top: 50%;
     transform: translateY(-50%);
 }
@@ -217,7 +217,6 @@ header {
 .hero-banner {
     width: 100%;
     min-height: 280px;
-    /* DİQQƏT: BURADA PNG OLARAQ DƏYİŞDİRİLDİ */
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('banner.png') no-repeat center center/cover;
     display: flex;
     flex-direction: column;
@@ -872,4 +871,258 @@ header {
 
 .balance-add-button {
     background-color: transparent;
-    color: #007
+    color: #007bff;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    box-shadow: none;
+    position: static;
+    top: auto;
+}
+
+.balance-add-button .fas {
+    color: #007bff;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: block;
+    }
+
+    .header-top {
+        justify-content: space-between;
+    }
+
+    .header-icons {
+        order: 3;
+        margin-left: auto;
+    }
+
+    .hamburger-menu {
+        order: 2;
+        position: static;
+        transform: none;
+        margin-left: auto;
+        margin-right: 15px;
+    }
+
+    .search-bar-container {
+        width: 100%;
+        margin-top: 10px;
+        padding: 8px 15px;
+        font-size: 0.95rem;
+    }
+
+    .main-nav {
+        display: block;
+    }
+
+    .bottom-nav {
+        display: flex;
+    }
+
+    .game-detail-content {
+        margin: 20px auto;
+        padding: 20px;
+        width: calc(100% - 40px);
+    }
+
+    .purchase-options input, .purchase-options button, .whatsapp-button {
+        width: 100%;
+    }
+    .page-content {
+        margin: 20px auto;
+        padding: 20px;
+        width: calc(100% - 40px);
+    }
+
+    .hero-logo {
+        font-size: 3rem;
+    }
+    .hero-slogan {
+        font-size: 1.1rem;
+    }
+    .game-card {
+        width: calc(50% - 25px);
+        max-width: 180px;
+    }
+    .game-card h3 {
+        font-size: 1.1rem;
+    }
+    .categories-header h2 {
+        font-size: 1.6rem;
+    }
+}
+
+@media (min-width: 769px) {
+    .hamburger-menu, .main-nav, .bottom-nav {
+        display: none !important;
+    }
+
+    .header-top {
+        justify-content: flex-start;
+    }
+
+    .logo-container {
+        display: block;
+        margin-right: auto;
+    }
+    main {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    .search-bar-container {
+        max-width: 400px;
+        margin-left: 20px;
+    }
+}
+
+/* New styles for cart.html */
+.cart-page-content {
+    padding-bottom: 80px; /* Aşağı naviqasiya üçün boşluq */
+}
+
+#cart-items-container {
+    margin-top: 20px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.cart-item {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    border-bottom: 1px solid #f0f0f0;
+    margin-bottom: 10px;
+    background-color: #f8faff;
+    border-radius: 8px;
+    position: relative;
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.cart-item p {
+    margin: 5px 0;
+    font-size: 1rem;
+    color: #444;
+}
+
+.cart-item strong {
+    font-size: 1.1rem;
+    color: #2c3e50;
+}
+
+.remove-from-cart-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    align-self: flex-end; /* Sağ tərəfdə olsun */
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.remove-from-cart-btn:hover {
+    background-color: #c0392b;
+}
+
+#cart-summary {
+    margin-top: 20px;
+    text-align: right;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #2c3e50;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+#total-price {
+    color: #28a745;
+    font-size: 1.3rem;
+}
+
+#clear-cart-btn {
+    background-color: #f39c12;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+#clear-cart-btn:hover {
+    background-color: #e67e22;
+}
+
+#checkout-form {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+#checkout-form label {
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+#checkout-form input[type="text"],
+#checkout-form input[type="email"],
+#checkout-form input[type="tel"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.primary-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    font-weight: bold;
+}
+
+.primary-button:hover {
+    background-color: #0056b3;
+}
+
+.secondary-button {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: background-color 0.3s ease;
+}
+.secondary-button:hover {
+    background-color: #5a6268;
+}
