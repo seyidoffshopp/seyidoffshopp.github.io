@@ -137,9 +137,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    displayGames();
+    displayGames(); // Səhifə yüklənəndə oyunları göstər
 
-    // Səbət Funksionallığı (İndi aktivdir)
+    // Səbət Funksionallığı Başlanğıcı (İndi aktivdir)
     function updateCartCount() {
         const cartCountElement = document.querySelector('.bottom-nav .cart-count');
         let cartItems = JSON.parse(localStorage.getItem('cartItems')) || []; // Local Storage istifadə edirik
