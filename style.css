@@ -1,27 +1,31 @@
+/* General styles */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', sans-serif; /* Google Fonts-dan daha müasir şrift */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #eef2f7;
-    color: #333;
+    background-color: #f0f2f5; /* Yumşaq boz fon */
+    color: #34495e; /* Tünd boz mətn */
     line-height: 1.6;
+    overflow-x: hidden; /* Üfüqi sürüşməni ləğv et */
 }
 
+/* Header */
 header {
-    background-color: #fff;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    padding: 10px 20px;
+    background-color: #ffffff;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); /* Daha dərin kölgə */
+    padding: 15px 25px; /* Daha geniş padding */
     position: sticky;
     top: 0;
     z-index: 998;
+    border-bottom: 1px solid #e0e6ed; /* Yüngül haşiyə */
 }
 
 .header-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 15px; /* Boşluğu artır */
     position: relative;
 }
 
@@ -32,17 +36,19 @@ header {
 }
 
 .logo {
-    font-size: 1.9rem;
+    font-family: 'Montserrat', sans-serif; /* Logo üçün fərqli şrift */
+    font-size: 2.2rem; /* Daha böyük logo */
     font-weight: 800;
-    color: #0056b3;
-    margin-right: 12px;
-    letter-spacing: -0.5px;
+    color: #007bff; /* Tünd mavi */
+    margin-right: 15px;
+    letter-spacing: -0.8px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .logo-link {
-    color: #667;
+    color: #889;
     text-decoration: none;
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     transition: color 0.3s ease;
 }
 
@@ -57,36 +63,38 @@ header {
 }
 
 .header-icons .fas {
-    font-size: 26px;
+    font-size: 28px; /* Daha böyük ikonlar */
     color: #555;
-    margin-left: 18px;
+    margin-left: 20px;
     cursor: pointer;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.2s ease;
 }
 .header-icons .fas:hover {
     color: #007bff;
+    transform: scale(1.1);
 }
 
 .notification-count {
     position: absolute;
-    top: -8px;
-    right: -8px;
-    background-color: #e74c3c;
+    top: -10px;
+    right: -10px;
+    background-color: #ff4d4d; /* Daha canlı qırmızı */
     color: white;
-    font-size: 0.75rem;
-    padding: 3px 7px;
+    font-size: 0.8rem;
+    padding: 4px 8px;
     border-radius: 50%;
     transform: translate(50%, -50%);
-    border: 1px solid white;
+    border: 2px solid white; /* Daha qalın ağ haşiyə */
+    font-weight: bold;
 }
 
 .search-bar-container {
     display: flex;
-    border: 1px solid #cceeff;
-    border-radius: 25px;
-    padding: 8px 18px;
-    background-color: #f0f8ff;
-    box-shadow: inset 0 1px 3px rgba(0,0,0,0.08);
+    border: 1px solid #a9d9ff; /* Açıq mavi haşiyə */
+    border-radius: 30px; /* Daha yuvarlaq */
+    padding: 10px 20px; /* Daha geniş padding */
+    background-color: #f8faff; /* Çox açıq mavi fon */
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.08); /* Daxili kölgə */
 }
 
 .search-input {
@@ -94,8 +102,8 @@ header {
     border: none;
     outline: none;
     background: none;
-    font-size: 1.05rem;
-    color: #444;
+    font-size: 1.1rem;
+    color: #333;
 }
 
 .search-input::placeholder {
@@ -107,38 +115,39 @@ header {
     border: none;
     color: #007bff;
     cursor: pointer;
-    font-size: 1.2rem;
-    padding: 0 8px;
-    transition: color 0.3s ease;
+    font-size: 1.3rem;
+    padding: 0 10px;
+    transition: color 0.3s ease, transform 0.2s ease;
 }
 .search-button:hover {
     color: #0056b3;
+    transform: scale(1.1);
 }
 
 /* Hamburger menyu stili */
 .hamburger-menu {
-    display: none; /* Masaüstündə hələ də gizli */
+    display: none;
     background: none;
     border: none;
     cursor: pointer;
-    padding: 5px;
-    font-size: 26px;
+    padding: 8px; /* Daha geniş klik sahəsi */
+    font-size: 28px;
     color: #333;
     z-index: 1001;
     transition: transform 0.4s;
-    /* Mobil görünüşdə sağda olsun */
     position: absolute;
-    right: 10px; /* Əsas dəyişiklik: sağdan məsafə */
+    right: 15px; /* Sağdan məsafə */
     top: 50%;
     transform: translateY(-50%);
 }
 
 .hamburger-menu .bar {
     display: block;
-    width: 28px;
-    height: 3px;
+    width: 30px; /* Biraz enli */
+    height: 4px; /* Biraz qalın */
     background-color: #333;
     margin: 6px 0;
+    border-radius: 2px; /* Yuvarlaq kənarlar */
     transition: 0.4s;
 }
 
@@ -146,14 +155,14 @@ header {
 .main-nav {
     position: fixed;
     top: 0;
-    left: -280px;
-    width: 280px;
+    left: -300px; /* Genişlik artırıldı */
+    width: 300px;
     height: 100%;
     background-color: #ffffff;
-    box-shadow: 2px 0 15px rgba(0,0,0,0.3);
+    box-shadow: 3px 0 20px rgba(0, 0, 0, 0.35); /* Daha güclü kölgə */
     transition: left 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     z-index: 1000;
-    padding-top: 80px;
+    padding-top: 100px; /* Headeri nəzərə alaraq */
     overflow-y: auto;
 }
 
@@ -172,29 +181,29 @@ header {
     align-items: center;
     text-decoration: none;
     color: #444;
-    padding: 16px 25px;
+    padding: 18px 30px; /* Daha geniş padding */
     border-bottom: 1px solid #f0f0f0;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .main-nav ul li a:hover {
-    background-color: #e6f2ff;
+    background-color: #e6f7ff; /* Açıq mavi hover */
     color: #007bff;
 }
 
 .main-nav ul li a .fas {
-    margin-right: 18px;
+    margin-right: 20px;
     color: #007bff;
-    font-size: 1.3rem;
+    font-size: 1.4rem; /* Daha böyük ikonlar */
 }
 
 .close-menu-btn {
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 25px;
+    right: 25px;
     background: none;
     border: none;
-    font-size: 30px;
+    font-size: 32px; /* Böyük X ikonu */
     color: #555;
     cursor: pointer;
     z-index: 1002;
@@ -204,110 +213,138 @@ header {
     transform: rotate(90deg);
 }
 
+/* Hero Banner (daxilində mətn logo var) */
 .hero-banner {
     width: 100%;
-    min-height: 250px;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('banner.jpg') no-repeat center center/cover;
+    min-height: 280px; /* Daha böyük banner */
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('banner.jpg') no-repeat center center/cover; /* Daha tünd overlay */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     color: white;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
-    border-radius: 12px;
-    margin-top: 15px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8); /* Daha güclü kölgə */
+    border-radius: 15px; /* Daha yuvarlaq kənar */
+    margin-top: 20px;
     overflow: hidden;
+    animation: fadeIn 1s ease-out; /* Fade-in animasiyası */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .hero-logo {
-    font-size: 4rem;
+    font-size: 4.5rem; /* Daha böyük logo */
     font-weight: 900;
-    color: white;
-    margin-bottom: 15px;
-    letter-spacing: 1px;
+    color: #ffffff;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    animation: zoomIn 1s ease-out; /* Zoom-in animasiyası */
+}
+@keyframes zoomIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
 }
 
 .hero-slogan {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     font-style: italic;
     font-weight: 300;
+    color: #f0f0f0;
+    animation: slideUp 1.2s ease-out; /* Slide-up animasiyası */
+}
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
 }
 
+
+/* Categories section */
 .categories-section {
-    padding: 25px;
-    background-color: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    margin-top: 25px;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1); /* Daha böyük kölgə */
+    margin-top: 30px;
 }
 
 .categories-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 }
 
 .categories-header h2 {
     margin: 0;
     text-align: left;
-    font-size: 1.8rem;
-    color: #222;
+    font-size: 2rem; /* Daha böyük başılıq */
+    color: #2c3e50; /* Tünd boz */
+    font-weight: 700;
 }
 
 .view-all {
     text-decoration: none;
     color: #007bff;
-    font-weight: bold;
-    padding: 5px 10px;
-    border: 1px solid #007bff;
-    border-radius: 20px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: 600;
+    padding: 8px 18px;
+    border: 2px solid #007bff;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
 }
 .view-all:hover {
     background-color: #007bff;
     color: white;
+    transform: translateY(-2px);
 }
 
 .game-listing {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 25px;
-    margin-top: 20px;
+    gap: 30px; /* Daha böyük boşluq */
+    margin-top: 25px;
 }
 
 .game-card {
     background-color: #ffffff;
-    padding: 18px;
-    border-radius: 15px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    padding: 20px; /* Daha çox padding */
+    border-radius: 20px; /* Daha yuvarlaq */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12); /* Daha böyük və yumşaq kölgə */
     text-align: center;
-    width: 170px;
+    width: 180px; /* Biraz genişləndi */
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     box-sizing: border-box;
-    border: 1px solid #f0f0f0;
+    border: 1px solid #f5f5f5; /* Yüngül haşiyə */
+    cursor: pointer;
 }
 
 .game-card:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    transform: translateY(-10px) scale(1.03); /* Daha çox yuxarı qalxma və böyümə */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
 }
 
 .game-card img {
     max-width: 100%;
-    height: 110px;
+    height: 120px; /* Biraz hündür */
     object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 12px;
-    border: 1px solid #eee;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    border: 2px solid #e0e0e0; /* Şəkilə yüngül haşiyə */
+    transition: border-color 0.3s ease;
+}
+.game-card:hover img {
+    border-color: #007bff;
 }
 
 .game-card h3 {
-    font-size: 1.1rem;
-    color: #222;
-    margin-bottom: 0;
-    height: 3em;
+    font-size: 1.3rem; /* Biraz böyük */
+    color: #2c3e50;
+    margin-bottom: 8px;
+    height: 3.2em;
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -315,552 +352,34 @@ header {
     font-weight: 600;
 }
 
+/* Page content for separate HTML files */
 .page-content {
-    max-width: 800px;
+    max-width: 900px; /* Genişlik artırıldı */
     margin: 40px auto;
-    padding: 30px;
-    background-color: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    padding: 40px; /* Daha çox padding */
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
     text-align: left;
 }
 .page-content h2 {
     text-align: center;
     color: #0056b3;
-    margin-bottom: 30px;
-    font-size: 2.2rem;
+    margin-bottom: 40px;
+    font-size: 2.5rem; /* Daha böyük başılıq */
     font-weight: 700;
+    position: relative;
+}
+.page-content h2::after { /* Başlıq altından xətt */
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: #007bff;
+    margin: 15px auto 0;
+    border-radius: 2px;
 }
 .page-content p {
-    font-size: 1.1rem;
-    margin-bottom: 15px;
-    color: #444;
-}
-.page-content form {
-    background-color: #f8faff;
-    border: 1px solid #e0eaff;
-}
-.contact-info {
-    margin-top: 30px;
-    padding-top: 20px;
-    border-top: 1px solid #f0f0f0;
-    text-align: center;
-}
-.contact-info h3 {
-    color: #007bff;
-    margin-bottom: 15px;
-}
-.contact-info p {
-    font-size: 1rem;
-    color: #555;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 10px;
-}
-.contact-info p .fas {
-    margin-right: 10px;
-    color: #007bff;
-}
-
-
-.game-detail-content {
-    max-width: 600px;
-    margin: 40px auto;
-    padding: 30px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    text-align: center;
-}
-.game-detail-content h2 {
-    color: #007bff;
+    font-size: 1.15rem; /* Biraz böyük mətn */
     margin-bottom: 20px;
-    font-size: 2.2rem;
-}
-.game-detail-content p {
-    line-height: 1.7;
-    margin-bottom: 20px;
-}
-.game-detail-content ul {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 20px;
-}
-.game-detail-content ul li {
-    background-color: #f0f0f0;
-    margin: 8px 0;
-    padding: 10px;
-    border: 1px solid #e0e0e0;
-    border-radius: 5px;
-    font-size: 1.1rem;
-}
-
-.purchase-options {
-    margin-top: 25px;
-    padding-top: 25px;
-    border-top: 1px solid #eee;
-    text-align: left;
-}
-
-.purchase-options label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #555;
-    font-size: 0.95rem;
-}
-
-.purchase-options input[type="text"],
-.purchase-options input[type="email"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-sizing: border-box;
-    font-size: 1rem;
-    background-color: #f9f9f9;
-}
-
-.price-bonus-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-    background-color: #f0f0f0;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #e0e0e0;
-}
-
-.price-bonus-row .quantity-control {
-    display: flex;
-    align-items: center;
-}
-
-.price-bonus-row .quantity-control button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 5px 10px;
-    cursor: pointer;
-    font-size: 1.2rem;
-    line-height: 1;
-    margin: 0 5px;
-}
-.price-bonus-row .quantity-control button:hover {
-    background-color: #0056b3;
-}
-
-.price-bonus-row .quantity-display {
-    font-weight: bold;
-    font-size: 1.1rem;
-    color: #333;
-}
-
-.price-bonus-row .price-info {
-    display: flex;
-    align-items: center;
-    font-weight: bold;
-    color: #28a745;
-}
-
-.price-bonus-row .price-info .bonus {
-    margin-left: 15px;
-    color: #ffc107;
-}
-
-.payment-methods {
-    margin-top: 30px;
-}
-
-.payment-methods h4 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-.payment-method-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 15px;
-}
-
-.payment-method-item {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 15px;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.payment-method-item:hover {
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    border-color: #007bff;
-}
-
-.payment-method-item.selected {
-    border-color: #007bff;
-    box-shadow: 0 0 0 2px #007bff;
-}
-
-.payment-method-item .method-icon {
-    font-size: 2.5rem;
-    color: #007bff;
-    margin-bottom: 10px;
-}
-
-.payment-method-item .method-name {
-    font-weight: bold;
-    font-size: 0.9rem;
-    color: #333;
-}
-.payment-method-item .method-desc {
-    font-size: 0.8rem;
-    color: #777;
-}
-
-.order-buttons {
-    display: flex;
-    justify-content: space-between;
-    gap: 15px;
-    margin-top: 30px;
-}
-
-.order-buttons button {
-    flex: 1;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.order-buttons .order-confirm-button {
-    background-color: #007bff;
-    color: white;
-}
-
-.order-buttons .order-confirm-button:hover {
-    background-color: #0056b3;
-}
-
-.order-buttons .order-cancel-button {
-    background-color: #dc3545;
-    color: white;
-}
-
-.order-buttons .order-cancel-button:hover {
-    background-color: #c82333;
-}
-
-.whatsapp-button {
-    display: inline-flex;
-    align-items: center;
-    background-color: #25D366;
-    color: white;
-    text-decoration: none;
-    padding: 12px 25px;
-    border-radius: 5px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-    margin-top: 15px;
-    width: 100%;
-    justify-content: center;
-    box-sizing: border-box;
-}
-
-.whatsapp-button i {
-    margin-right: 10px;
-    font-size: 1.3rem;
-}
-
-.whatsapp-button:hover {
-    background-color: #1DA851;
-}
-
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1003;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.4);
-    padding-top: 60px;
-}
-
-.modal-content {
-    background-color: #fefefe;
-    margin: 5% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 90%;
-    max-width: 400px;
-    border-radius: 8px;
-    position: relative;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    animation-name: animatetop;
-    animation-duration: 0.4s
-}
-
-@keyframes animatetop {
-    from {top: -300px; opacity: 0}
-    to {top: 5%; opacity: 1}
-}
-
-.close-button {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-    position: absolute;
-    top: 10px;
-    right: 15px;
-}
-
-.close-button:hover,
-.close-button:focus {
-    color: black;
-    text-decoration: none;
-}
-
-.modal-content h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-.tab-buttons {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-.tab-btn {
-    background-color: #eee;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 1rem;
-    flex-grow: 1;
-    border-radius: 5px;
-    margin: 0 5px;
-    transition: background-color 0.3s ease;
-}
-
-.tab-btn.active {
-    background-color: #007bff;
-    color: white;
-}
-
-.tab-btn:hover:not(.active) {
-    background-color: #ddd;
-}
-
-.tab-content {
-    display: none;
-}
-
-.tab-content.active {
-    display: block;
-}
-
-.modal-content form label {
-    text-align: left;
-    margin-top: 10px;
-}
-
-.modal-content form input {
-    width: calc(100% - 20px);
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-sizing: border-box;
-}
-
-.modal-content .auth-button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1.1rem;
-    transition: background-color 0.3s ease;
-    width: 100%;
-    margin-top: 10px;
-}
-
-.modal-content .auth-button:hover {
-    background-color: #0056b3;
-}
-
-.forgot-password {
-    display: block;
-    text-align: right;
-    font-size: 0.9rem;
-    color: #007bff;
-    text-decoration: none;
-    margin-bottom: 15px;
-}
-
-.bottom-nav {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: white;
-    box-shadow: 0 -4px 15px rgba(0,0,0,0.15);
-    height: 65px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding-bottom: env(safe-area-inset-bottom);
-    z-index: 999;
-}
-
-.nav-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-    color: #777;
-    font-size: 0.8rem;
-    padding: 5px;
-    transition: color 0.3s ease, transform 0.2s ease;
-}
-
-.nav-item:hover {
-    transform: translateY(-3px);
-}
-
-.nav-item.active {
-    color: #007bff;
-    transform: translateY(-2px);
-}
-
-.nav-item .fas {
-    font-size: 1.6rem;
-    margin-bottom: 4px;
-}
-
-.cart-count, .notification-count-bottom {
-    background-color: #e74c3c;
-    color: white;
-    font-size: 0.75rem;
-    padding: 2px 7px;
-    border-radius: 50%;
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    transform: translate(50%, -50%);
-    border: 1px solid white;
-}
-
-.balance-add-button {
-    background-color: transparent;
-    color: #007bff;
-    border-radius: 50%;
-    width: 55px;
-    height: 55px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.8rem;
-    box-shadow: none;
-    position: static;
-    top: auto;
-}
-
-.balance-add-button .fas {
-    color: #007bff;
-    margin: 0;
-}
-
-@media (max-width: 768px) {
-    .hamburger-menu {
-        display: block;
-    }
-
-    .header-top {
-        justify-content: space-between;
-    }
-
-    .header-icons {
-        /* Hamburgeri sağa itələmək üçün margin-left-i ləğv edirik */
-        /* margin-left: auto; */
-    }
-    
-    /* İkonlar sağda qalsın, hamburger də sağda öz yerində */
-    .header-top > .header-icons {
-        order: 3;
-        margin-left: auto;
-    }
-
-    .header-top > .hamburger-menu {
-        order: 2;
-        position: static;
-        transform: none;
-        margin-left: auto;
-        margin-right: 15px;
-    }
-
-    .search-bar-container {
-        width: 100%;
-        margin-top: 10px;
-    }
-
-    .main-nav {
-        display: block;
-    }
-
-    .bottom-nav {
-        display: flex;
-    }
-
-    .game-detail-content {
-        margin: 20px auto;
-        padding: 20px;
-        width: calc(100% - 40px);
-    }
-
-    .purchase-options input, .purchase-options button, .whatsapp-button {
-        width: 100%;
-    }
-    .page-content {
-        margin: 20px auto;
-        padding: 20px;
-        width: calc(100% - 40px);
-    }
-}
-
-@media (min-width: 769px) {
-    .hamburger-menu, .main-nav, .bottom-nav {
-        display: none !important;
-    }
-
-    .header-top {
-        justify-content: flex-start;
-    }
-
-    .logo-container {
-        display: block;
-        margin-right: auto;
-    }
-    main {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 20px;
-    }
-}
+    color
