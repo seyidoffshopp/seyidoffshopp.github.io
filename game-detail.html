@@ -9,21 +9,41 @@
 </head>
 <body>
     <header>
-        <div class="logo">Seyidoff Shop</div>
-        <button class="hamburger-menu" aria-label="Menyu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </button>
-        <nav class="main-nav">
-            <ul>
-                <li><a href="index.html#home">Ana Səhifə</a></li>
-                <li><a href="index.html#features">Xidmətlər</a></li>
-                <li><a href="index.html#about">Haqqımızda</a></li>
-                <li><a href="index.html#contact">Əlaqə</a></li>
-            </ul>
-        </nav>
+        <div class="header-top">
+            <button class="hamburger-menu" aria-label="Menyu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <div class="logo-container">
+                <div class="logo">Seyidoff Shop</div>
+                <a href="index.html" class="logo-link">www.seyidoffshopp.github.io</a>
+            </div>
+            <div class="header-icons">
+                <i class="fas fa-bell"></i>
+                <span class="notification-count">93</span>
+            </div>
+        </div>
+        <div class="search-bar-container">
+            <input type="text" placeholder="Oyun axtar.." class="search-input">
+            <button class="search-button"><i class="fas fa-search"></i></button>
+        </div>
     </header>
+
+    <nav class="main-nav">
+        <button class="close-menu-btn"><i class="fas fa-times"></i></button>
+        <ul>
+            <li><a href="index.html#home"><i class="fas fa-home"></i> Ana Səhifə</a></li>
+            <li><a href="#" id="personal-cabinet-btn"><i class="fas fa-user"></i> Şəxsi kabinet</a></li>
+            <li><a href="index.html#categories"><i class="fas fa-gamepad"></i> Oyunlar</a></li>
+            <li><a href="index.html#about"><i class="fas fa-info-circle"></i> Haqqımızda</a></li>
+            <li><a href="index.html#contact"><i class="fas fa-envelope"></i> Əlaqə</a></li>
+            <li><a href="#"><i class="fas fa-newspaper"></i> Xəbərlər</a></li>
+            <li><a href="#"><i class="fas fa-university"></i> Bank Hesab Nömrələri</a></li>
+            <li><a href="#"><i class="fas fa-question-circle"></i> Yardım</a></li>
+            <li><a href="#"><i class="fas fa-clipboard-list"></i> Qaydalar</a></li>
+        </ul>
+    </nav>
 
     <main>
         <section class="game-detail-content">
@@ -34,8 +54,61 @@
     </main>
 
     <footer>
-        <p>&copy; 2024 Seyidoff Shop. Bütün hüquqlar qorunur.</p>
+        <p>&copy; 2024 Seyidoff Shopp. Bütün hüquqlar qorunur.</p>
     </footer>
+
+    <div id="personal-cabinet-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Şəxsi Kabinet</h2>
+            <div class="tab-buttons">
+                <button class="tab-btn active" data-tab="login">Giriş</button>
+                <button class="tab-btn" data-tab="register">Qeydiyyat</button>
+            </div>
+            <div id="login-tab" class="tab-content active">
+                <p>Şəxsi kabinet funksionallığı tezliklə aktiv olacaq.</p>
+                <form>
+                    <label for="login-email">E-mail:</label>
+                    <input type="email" id="login-email" placeholder="E-mailinizi daxil edin">
+                    <label for="login-password">Şifrə:</label>
+                    <input type="password" id="login-password" placeholder="Şifrənizi daxil edin">
+                    <a href="#" class="forgot-password">Şifrəni Unutmusan?</a>
+                    <button type="submit" class="auth-button">Daxil ol</button>
+                </form>
+            </div>
+            <div id="register-tab" class="tab-content">
+                <p>Qeydiyyat funksionallığı tezliklə aktiv olacaq.</p>
+                <form>
+                    <label for="register-email">E-mail:</label>
+                    <input type="email" id="register-email" placeholder="E-mailinizi daxil edin">
+                    <label for="register-password">Şifrə:</label>
+                    <input type="password" id="register-password" placeholder="Şifrənizi daxil edin">
+                    <button type="submit" class="auth-button">Qeydiyyatdan keç</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <nav class="bottom-nav">
+        <a href="index.html#home" class="nav-item">
+            <i class="fas fa-home"></i>
+            <span>Ana Səhifə</span>
+        </a>
+        <a href="#" class="nav-item add-button">
+            <i class="fas fa-plus-circle"></i>
+            <span>Əlavə et</span>
+        </a>
+        <a href="#" class="nav-item">
+            <i class="fas fa-shopping-cart"></i>
+            <span>Səbət</span>
+            <span class="cart-count">0</span>
+        </a>
+        <a href="#" class="nav-item">
+            <i class="fas fa-bell"></i>
+            <span>Bildirişlər</span>
+            <span class="notification-count-bottom">1</span>
+        </a>
+    </nav>
 
     <script src="script.js"></script>
 </body>
