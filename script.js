@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
         closeMenuBtn.addEventListener('click', () => {
             navMenu.classList.remove('active');
         });
-        // Menyu elementinə kliklənəndə də menyu bağlansın (Mobil UX üçün)
         navMenu.querySelectorAll('ul li a').forEach(item => {
             item.addEventListener('click', () => {
                 navMenu.classList.remove('active');
@@ -67,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     // Şəxsi Kabinet Modal Funksionallığı Sonu
 
-    // Oyun/Xidmət Məlumatları (Şəkil adlarını yoxlayın!)
+    // Oyun/Xidmət Məlumatları
     const gameListing = document.getElementById('game-listing');
 
     const games = [
@@ -125,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
             games.forEach(game => {
                 const gameCard = document.createElement('div');
                 gameCard.classList.add('game-card');
-
+                
                 gameCard.innerHTML = `
                     <a href="game-detail.html?id=${game.id}" style="text-decoration: none; color: inherit;">
                         <img src="${game.image}" alt="${game.name}">
@@ -139,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     displayGames(); // Səhifə yüklənəndə oyunları göstər
 
-    // Səbət Funksionallığı (İndi aktivdir)
+    // Səbət Funksionallığı Başlanğıcı
     function updateCartCount() {
         const cartCountElement = document.querySelector('.bottom-nav .cart-count');
         let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
@@ -153,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateNotificationCount() {
         const notificationCountTop = document.querySelector('.header-icons .notification-count');
         const notificationCountBottom = document.querySelector('.bottom-nav .notification-count-bottom');
-        let notifications = 1;
+        let notifications = 1; // Məsələn, bir yeni bildiriş var
         if (notificationCountTop) {
             notificationCountTop.textContent = notifications;
         }
@@ -162,25 +161,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     updateNotificationCount();
-
-    // Səbət düyməsinə klikləmə funksionallığı əlavə edildi
-    const cartButton = document.querySelector('.bottom-nav .nav-item:nth-child(3)'); // Səbət düyməsi (3-cü element)
-    if (cartButton) {
-        cartButton.addEventListener('click', (e) => {
-            e.preventDefault(); // Səhifənin yenilənməsinin qarşısını alır
-            // Burada səbət səhifəsinə yönləndirmə və ya modal açma funksionallığı əlavə edə bilərsiniz.
-            // Məsələn, sadə bir alert göstərək:
-            let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-            if (cartItems.length > 0) {
-                alert(`Səbətinizdə ${cartItems.length} məhsul var.\nMəhsullar:\n${cartItems.map(item => item.name + ' - ' + item.quantity + ' (' + item.price + ')').join('\n')}`);
-                // Əslində buraya səbət səhifəsinə yönləndirmə kodu gəlməlidir:
-                // window.location.href = 'cart.html'; // Əgər cart.html səhifəniz varsa
-            } else {
-                alert('Səbətiniz boşdur.');
-            }
-        });
-    }
-
 
     // game-detail.html səhifəsi üçün JavaScript məntiqi
     const gameDetailContainer = document.getElementById('game-detail-container');
@@ -202,7 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="purchase-options">
                         <label for="gameIdInput">Player ID:</label>
                         <input type="text" id="gameIdInput" placeholder="Oyunçu ID-nizi daxil edin." required>
-
+                        
                         <div class="price-bonus-row">
                             <div class="quantity-control">
                                 <button class="minus-btn">-</button>
@@ -279,7 +259,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     currentPriceSpan.textContent = `${game.prices[currentQuantityIndex].amount} Azn`;
                     quantityDisplay.textContent = game.prices[currentQuantityIndex].quantity;
                 }
-
+                
                 if (minusBtn && plusBtn && quantityDisplay && currentPriceSpan) {
                     minusBtn.addEventListener('click', () => {
                         if (currentQuantityIndex > 0) {
@@ -317,7 +297,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
                         if (gameIdInput && selectedMethod && selectedQuantity && selectedPrice) {
                             alert(`Sifarişiniz qəbul edildi!\nOyun: ${game.name}\nPlayer ID: ${gameIdInput}\nSeçilən Miqdar: ${selectedQuantity}\nÖdəniləcək Məbləğ: ${selectedPrice}\nÖdəniş Üsulu: ${selectedMethod}`);
-                            // Məhsulu səbətə əlavə et (Local Storage)
                             let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
                             cartItems.push({ 
                                 id: game.id, 
@@ -328,13 +307,13 @@ document.addEventListener('DOMContentLoaded', () => {
                                 playerID: gameIdInput 
                             });
                             localStorage.setItem('cartItems', JSON.stringify(cartItems));
-                            updateCartCount(); // Səbət sayını yenilə
+                            updateCartCount();
                         } else {
                             alert("Zəhmət olmasa, Player ID-ni daxil edin və ödəniş üsulunu seçin.");
                         }
                     });
                 }
-
+                
                 const cancelButton = gameDetailContainer.querySelector('.order-cancel-button');
                 if(cancelButton) {
                     cancelButton.addEventListener('click', () => {
@@ -343,8 +322,96 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
 
-        } else {
-            gameDetailContainer.innerHTML = '<p>Oyun tapılmadı.</p>';
+            // Səbət səhifəsinin məntiqi (cart.html)
+            const cartItemsContainer = document.getElementById('cart-items-container');
+            const cartSummary = document.getElementById('cart-summary');
+            const totalPriceElement = document.getElementById('total-price');
+            const clearCartBtn = document.getElementById('clear-cart-btn');
+            const checkoutForm = document.getElementById('checkout-form');
+
+            if (cartItemsContainer && window.location.pathname.endsWith('cart.html')) {
+                displayCartItems();
+
+                if (clearCartBtn) {
+                    clearCartBtn.addEventListener('click', () => {
+                        localStorage.removeItem('cartItems');
+                        updateCartCount();
+                        displayCartItems();
+                        alert('Səbətiniz təmizləndi!');
+                    });
+                }
+
+                if (checkoutForm) {
+                    checkoutForm.addEventListener('submit', (e) => {
+                        e.preventDefault();
+                        const fullName = document.getElementById('full-name').value;
+                        const contactEmail = document.getElementById('contact-email').value;
+                        const phoneNumber = document.getElementById('phone-number').value;
+                        let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+                        if (cartItems.length === 0) {
+                            alert('Səbətiniz boşdur, sifariş tamamlana bilməz.');
+                            return;
+                        }
+
+                        let orderDetails = `Sifariş Təsdiqləndi!\nAd: ${fullName}\nEmail: ${contactEmail}\nTelefon: ${phoneNumber}\n\nMəhsullar:\n`;
+                        let total = 0;
+                        cartItems.forEach(item => {
+                            orderDetails += `- ${item.name}: ${item.quantity} ədəd, ${item.price} AZN (Player ID: ${item.playerID})\n`;
+                            // Qiymət bir string kimi gəlirsə (məsələn "2.00 Azn"), onu ədədə çevirmək lazımdır.
+                            total += parseFloat(String(item.price).replace(' Azn', ''));
+                        });
+                        orderDetails += `\nÜmumi Məbləğ: ${total.toFixed(2)} AZN`;
+
+                        alert(orderDetails);
+                        
+                        localStorage.removeItem('cartItems'); // Sifariş tamamlandıqdan sonra səbəti təmizlə
+                        updateCartCount();
+                        displayCartItems(); // Səbəti yenilə
+                        checkoutForm.reset(); // Formanı təmizlə
+                    });
+                }
+            }
+
+            function displayCartItems() {
+                let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+                cartItemsContainer.innerHTML = '';
+                let total = 0;
+
+                if (cartItems.length === 0) {
+                    cartItemsContainer.innerHTML = '<p>Səbətiniz boşdur.</p>';
+                    if (cartSummary) cartSummary.style.display = 'none';
+                    return;
+                }
+
+                cartItems.forEach((item, index) => {
+                    const itemDiv = document.createElement('div');
+                    itemDiv.classList.add('cart-item');
+                    itemDiv.innerHTML = `
+                        <p><strong>${item.name}</strong></p>
+                        <p>Miqdar: ${item.quantity} | Qiymət: ${item.price}</p>
+                        <p>Player ID: ${item.playerID || 'Daxil edilməyib'}</p>
+                        <button class="remove-from-cart-btn" data-index="${index}">Səbətdən Sil</button>
+                    `;
+                    cartItemsContainer.appendChild(itemDiv);
+                    total += parseFloat(String(item.price).replace(' Azn', '')); // Qiyməti ədədə çevir
+                });
+
+                if (totalPriceElement) totalPriceElement.textContent = `${total.toFixed(2)} AZN`;
+                if (cartSummary) cartSummary.style.display = 'block';
+
+                // Səbətdən sil düymələrini aktiv et
+                cartItemsContainer.querySelectorAll('.remove-from-cart-btn').forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        const indexToRemove = parseInt(e.target.dataset.index);
+                        let currentItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+                        currentItems.splice(indexToRemove, 1); // Elementi sil
+                        localStorage.setItem('cartItems', JSON.stringify(currentItems));
+                        updateCartCount(); // Səbət sayını yenilə
+                        displayCartItems(); // Səbəti yenidən yüklə
+                        alert('Məhsul səbətdən silindi!');
+                    });
+                });
+            }
         }
-    }
-});
+    });
