@@ -126,7 +126,7 @@ header {
 
 /* Hamburger menyu stili */
 .hamburger-menu {
-    display: none;
+    display: none; /* Masaüstündə gizli qalacaq */
     background: none;
     border: none;
     cursor: pointer;
@@ -135,7 +135,7 @@ header {
     color: #333;
     z-index: 1001;
     transition: transform 0.4s;
-    position: absolute;
+    position: absolute; /* header-top-a nisbətən yerləşdirmə */
     right: 15px;
     top: 50%;
     transform: translateY(-50%);
@@ -985,7 +985,7 @@ header {
 
 /* New styles for cart.html */
 .cart-page-content {
-    padding-bottom: 80px; /* Aşağı naviqasiya üçün boşluq */
+    padding-bottom: 80px;
 }
 
 #cart-items-container {
@@ -1032,7 +1032,7 @@ header {
     border-radius: 5px;
     cursor: pointer;
     font-size: 0.9rem;
-    align-self: flex-end; /* Sağ tərəfdə olsun */
+    align-self: flex-end;
     margin-top: 10px;
     transition: background-color 0.3s ease;
 }
