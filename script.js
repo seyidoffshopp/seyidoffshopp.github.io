@@ -129,7 +129,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Yüklənmə prosesində xəta olmaması üçün DOMContentLoaded içində çağırırıq
     displayGames(); // Səhifə yüklənəndə oyunları göstər
 
     // game-detail.html səhifəsi üçün JavaScript məntiqi Başlanğıcı
@@ -212,4 +211,78 @@ document.addEventListener('DOMContentLoaded', () => {
             gameDetailContainer.innerHTML = `
                 <img src="${game.image}" alt="${game.name}" style="max-width: 100%; height: auto; border-radius: 8px; margin-bottom: 20px;">
                 <h2>${game.name}</h2>
+                <p>${game.description}</p>
+                ${pricesHtml}
+                ${purchaseOptionsHtml}
+            `;
+
+            // Miqdar artırma/azaltma və ödəniş seçimi üçün event listenerlər
+            if (game.type === 'id_input') {
+                const quantityDisplay = gameDetailContainer.querySelector('.quantity-display');
+                const minusBtn = gameDetailContainer.querySelector('.minus-btn');
+                const plusBtn = gameDetailContainer.querySelector('.plus-btn');
+                const currentPriceSpan = gameDetailContainer.querySelector('.current-price');
+                let currentQuantityIndex = 0;
+
+                if (game.prices.length > 0) {
+                    currentPriceSpan.textContent = `${game.prices[currentQuantityIndex].amount} Azn`;
+                    quantityDisplay.textContent = game.prices[currentQuantityIndex].quantity;
+                }
                 
+                if (minusBtn && plusBtn && quantityDisplay && currentPriceSpan) { // Elementlərin mövcudluğunu yoxla
+                    minusBtn.addEventListener('click', () => {
+                        if (currentQuantityIndex > 0) {
+                            currentQuantityIndex--;
+                            quantityDisplay.textContent = game.prices[currentQuantityIndex].quantity;
+                            currentPriceSpan.textContent = `${game.prices[currentQuantityIndex].amount} Azn`;
+                        }
+                    });
+
+                    plusBtn.addEventListener('click', () => {
+                        if (currentQuantityIndex < game.prices.length - 1) {
+                            currentQuantityIndex++;
+                            quantityDisplay.textContent = game.prices[currentQuantityIndex].quantity;
+                            currentPriceSpan.textContent = `${game.prices[currentQuantityIndex].amount} Azn`;
+                        }
+                    });
+                }
+
+                const paymentMethodItems = gameDetailContainer.querySelectorAll('.payment-method-item');
+                paymentMethodItems.forEach(item => {
+                    item.addEventListener('click', () => {
+                        paymentMethodItems.forEach(other => other.classList.remove('selected'));
+                        item.classList.add('selected');
+                        console.log('Seçilən ödəniş metodu:', item.dataset.method);
+                    });
+                });
+
+                const orderButton = gameDetailContainer.querySelector('#orderButton');
+                if (orderButton) {
+                    orderButton.addEventListener('click', () => {
+                        const gameIdInput = gameDetailContainer.querySelector('#gameIdInput')?.value; // Null-check əlavə edildi
+                        const selectedMethod = gameDetailContainer.querySelector('.payment-method-item.selected')?.dataset.method;
+                        const selectedQuantity = quantityDisplay?.textContent;
+                        const selectedPrice = currentPriceSpan?.textContent;
+
+                        if (gameIdInput && selectedMethod && selectedQuantity && selectedPrice) {
+                            alert(`Sifarişiniz qəbul edildi!\nOyun: ${game.name}\nPlayer ID: ${gameIdInput}\nSeçilən Miqdar: ${selectedQuantity}\nÖdəniləcək Məbləğ: ${selectedPrice}\nÖdəniş Üsulu: ${selectedMethod}`);
+                        } else {
+                            alert("Zəhmət olmasa, Player ID-ni daxil edin və ödəniş üsulunu seçin.");
+                        }
+                    });
+                }
+                
+                const cancelButton = gameDetailContainer.querySelector('.order-cancel-button');
+                if(cancelButton) {
+                    cancelButton.addEventListener('click', () => {
+                        alert('Sifariş ləğv edildi.');
+                    });
+                }
+            }
+
+        } else {
+            gameDetailContainer.innerHTML = '<p>Oyun tapılmadı.</p>';
+        }
+    }
+    // game-detail.html səhifəsi üçün JavaScript məntiqi Sonu
+});
