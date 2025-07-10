@@ -8,210 +8,258 @@ body {
 }
 
 header {
-    background-color: #333;
-    color: white;
-    padding: 1rem 0;
-    text-align: center;
+    background-color: #fff; /* Ağ fon DolphGame kimi */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 10px 20px;
+}
+
+.header-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 10px;
 }
 
-.logo {
-    font-size: 1.8rem;
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.dolph-logo {
+    height: 40px; /* Logonuza uyğun ölçü */
+    margin-right: 10px;
+}
+
+.logo-link {
+    color: #007bff; /* Mavi rəng DolphGame kimi */
+    text-decoration: none;
+    font-size: 1rem;
     font-weight: bold;
 }
 
-/* Hamburger menyu stili */
+.header-icons {
+    position: relative;
+}
+
+.header-icons .fas {
+    font-size: 24px;
+    color: #555;
+}
+
+.notification-count {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background-color: #ff4500; /* Qırmızı rəng */
+    color: white;
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 50%;
+    transform: translate(50%, -50%);
+}
+
+.search-bar-container {
+    display: flex;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 5px 15px;
+    background-color: #f9f9f9;
+}
+
+.search-input {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1rem;
+}
+
+.search-button {
+    background: none;
+    border: none;
+    color: #555;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0 5px;
+}
+
+/* Hamburger menyu stili (header-top-da yerləşdirilib) */
 .hamburger-menu {
     display: none; /* Masaüstündə gizli */
     background: none;
     border: none;
     cursor: pointer;
-    padding: 10px;
-    z-index: 1001; /* Menyunun üzərində olması üçün */
+    padding: 5px;
+    font-size: 24px; /* Hamburger ölçüsü */
+    color: #333; /* Rəngi qara */
+    z-index: 1001;
 }
 
 .hamburger-menu .bar {
     display: block;
     width: 25px;
     height: 3px;
-    background-color: white; /* Rəngi ağ etdim ki, qaranlıq fonda görünsün */
+    background-color: #333;
     margin: 5px 0;
     transition: 0.4s;
 }
 
-/* Naviqasiya menyusu stili */
+/* Mobil menyu (soldan açılan) */
+.main-nav {
+    position: fixed;
+    top: 0;
+    left: -100%; /* Əvvəlcə gizlət */
+    width: 280px; /* Menyunun genişliyi */
+    height: 100%;
+    background-color: white;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+    transition: left 0.3s ease-in-out;
+    z-index: 1000;
+    padding-top: 60px; /* Headeri nəzərə alaraq */
+    overflow-y: auto; /* Çox məzmun varsa sürüşdürmə */
+}
+
+.main-nav.active {
+    left: 0; /* Aktiv olanda görünən et */
+}
+
 .main-nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
-    display: flex; /* Masaüstündə yan-yana */
 }
 
 .main-nav ul li a {
+    display: flex; /* İkon və mətni yan-yana gətirir */
+    align-items: center;
     text-decoration: none;
-    color: white;
-    padding: 10px 15px;
-    display: block;
+    color: #333;
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
     transition: background-color 0.3s ease;
 }
 
 .main-nav ul li a:hover {
-    background-color: #555;
-    border-radius: 5px;
+    background-color: #f0f0f0;
 }
 
-main {
-    padding: 20px;
-}
-
-section {
-    padding: 40px 20px;
-    margin-bottom: 20px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-h1, h2 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-.hero {
-    background-color: #007bff;
-    color: white;
-    padding: 60px 20px;
-    text-align: center;
-    border-radius: 8px;
-}
-
-.hero h1 {
-    color: white;
-    font-size: 2.5rem;
-}
-
-.hero p {
+.main-nav ul li a .fas {
+    margin-right: 15px; /* İkon və mətn arasında boşluq */
+    color: #007bff;
     font-size: 1.2rem;
-    margin-top: 10px;
 }
 
-.features {
-    text-align: center;
-}
-
-.feature-grid {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-top: 30px;
-}
-
-.feature-item {
-    background-color: #f9f9f9;
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    flex: 1;
-    min-width: 250px;
-    max-width: 300px;
-    text-align: center;
-}
-
-.feature-item i {
-    font-size: 3rem;
-    color: #007bff;
-    margin-bottom: 15px;
-}
-
-.feature-item h3 {
+.close-menu-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
     color: #333;
-    margin-bottom: 10px;
+    cursor: pointer;
+    z-index: 1002;
 }
 
-/* Panellər üçün dəyişikliklər */
-.panels-container {
+/* Hero Banner */
+.hero-banner {
+    width: 100%;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.full-width-banner {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* Yüngül kənar yuvarlaqlığı */
+}
+
+/* Action Panellər (Balans Artır, Telegram Kanalı) */
+.action-panels-container {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-around;
-    align-items: flex-start;
-    gap: 20px;
-    padding: 40px 20px;
+    gap: 15px;
+    padding: 20px;
+    flex-wrap: wrap; /* Mobil uyğunluq üçün */
+}
+
+.action-panel {
     background-color: white;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.panel {
-    flex: 1;
-    min-width: 280px;
-    max-width: 350px;
-    padding: 25px;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     text-align: center;
-}
-
-.panel h3 {
-    color: #007bff;
-    margin-bottom: 10px;
-}
-
-.panel p {
-    font-size: 1rem;
-    line-height: 1.6;
-}
-
-/* Balans paneli üçün xüsusi stil */
-.balance-panel input[type="number"] {
-    width: calc(100% - 20px);
-    padding: 10px;
-    margin-top: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    padding: 15px;
+    flex: 1;
+    min-width: 150px;
+    max-width: 48%; /* İki panel yan-yana */
     box-sizing: border-box;
 }
 
-.balance-panel button {
-    background-color: #28a745;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
+.action-panel img {
+    max-width: 100%;
+    height: 80px; /* Şəkillərə ölçü verin */
+    object-fit: contain;
+    margin-bottom: 10px;
 }
 
-.balance-panel button:hover {
-    background-color: #218838;
+.action-panel p {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+    font-size: 1.1rem;
 }
 
-/* Oyun kartları üçün stil */
+.action-panel span {
+    font-size: 0.8rem;
+    color: #777;
+}
+
+/* Kateqoriyalar Bölməsi */
+.categories-section {
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-top: 20px;
+}
+
+.categories-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.categories-header h2 {
+    margin: 0;
+    text-align: left;
+    font-size: 1.5rem;
+}
+
+.view-all {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+
+/* Oyun kartları (əvvəlki kimi saxlandı, lakin kateqoriyalar içində) */
 .game-listing {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 30px;
+    justify-content: center; /* Ortada yerləşdirir */
+    gap: 20px; /* Kartlar arasında boşluq */
+    margin-top: 20px;
 }
 
 .game-card {
     background-color: #f9f9f9;
-    padding: 20px;
+    padding: 15px;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     text-align: center;
-    width: 280px; /* Kartın genişliyi */
+    width: 160px; /* DolphGame-ə bənzər kiçik kart ölçüsü */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
 }
 
 .game-card:hover {
@@ -221,20 +269,29 @@ h1, h2 {
 
 .game-card img {
     max-width: 100%;
-    height: 150px; /* Şəkil hündürlüyünü sabitlədik */
-    object-fit: cover; /* Şəklin kəsilmədən uyğunlaşması üçün */
+    height: 100px; /* Şəkil hündürlüyü */
+    object-fit: cover;
     border-radius: 8px;
-    margin-bottom: 15px;
-}
-
-.game-card h3 {
-    font-size: 1.5rem;
-    color: #007bff;
     margin-bottom: 10px;
 }
 
+.game-card h3 {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 0;
+    height: 3em; /* Mətnin uzunluğuna görə kart ölçüsü dəyişməsin */
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* 2 sətirdən sonra ... */
+    -webkit-box-orient: vertical;
+}
 
 .about, .contact {
+    padding: 40px 20px;
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     text-align: center;
 }
 
@@ -307,12 +364,12 @@ footer {
     background-color: #f0f0f0;
     margin: 8px 0;
     padding: 10px;
+    border: 1px solid #e0e0e0;
     border-radius: 5px;
     font-size: 1.1rem;
-    border: 1px solid #e0e0e0;
 }
 
-/* Satın alma bölməsi üçün stillər */
+/* Satın alma bölməsi stilləri */
 .purchase-options {
     margin-top: 30px;
     padding-top: 20px;
@@ -324,22 +381,22 @@ footer {
     margin-bottom: 8px;
     font-weight: bold;
     color: #555;
-    text-align: left; /* Etiketin soldan başlaması üçün */
+    text-align: left;
 }
 
 .purchase-options input[type="text"],
 .purchase-options input[type="email"] {
-    width: calc(100% - 22px); /* Paddingi nəzərə alaraq */
+    width: calc(100% - 22px);
     padding: 12px;
     margin-bottom: 15px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    box-sizing: border-box; /* Paddingin genişliyə təsir etməməsi üçün */
+    box-sizing: border-box;
     font-size: 1rem;
 }
 
 .purchase-options button {
-    background-color: #007bff; /* Mavi düymə */
+    background-color: #007bff;
     color: white;
     border: none;
     padding: 12px 25px;
@@ -347,7 +404,7 @@ footer {
     cursor: pointer;
     font-size: 1.1rem;
     transition: background-color 0.3s ease;
-    width: 100%; /* Tam genişlikdə düymə */
+    width: 100%;
     box-sizing: border-box;
 }
 
@@ -357,9 +414,9 @@ footer {
 
 /* WhatsApp düyməsi üçün stil */
 .whatsapp-button {
-    display: inline-flex; /* İkon və mətni yan-yana gətirir */
-    align-items: center; /* Vertikal olaraq mərkəzləşdirir */
-    background-color: #25D366; /* WhatsApp yaşıl rəngi */
+    display: inline-flex;
+    align-items: center;
+    background-color: #25D366;
     color: white;
     text-decoration: none;
     padding: 12px 25px;
@@ -368,13 +425,13 @@ footer {
     font-weight: bold;
     transition: background-color 0.3s ease;
     margin-top: 15px;
-    width: 100%; /* Tam genişlikdə düymə */
-    justify-content: center; /* Mərkəzləşdirir */
+    width: 100%;
+    justify-content: center;
     box-sizing: border-box;
 }
 
 .whatsapp-button i {
-    margin-right: 10px; /* İkon və mətn arasında boşluq */
+    margin-right: 10px;
     font-size: 1.3rem;
 }
 
@@ -382,85 +439,248 @@ footer {
     background-color: #1DA851;
 }
 
+/* Şəxsi Kabinet Modal Stili */
+.modal {
+    display: none; /* Gizli saxla */
+    position: fixed; /* Ekranın ortasında qalır */
+    z-index: 1003; /* Bütün digər elementlərin üstündə */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Məzmun çox olsa sürüşdürmə */
+    background-color: rgba(0,0,0,0.4); /* Yarı-şəffaf fon */
+    padding-top: 60px; /* Yuxarıdan boşluq */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; /* Yuxarıdan və ortadan yerləşmə */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 90%; /* Genişlik */
+    max-width: 400px;
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 5%; opacity: 1}
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+}
+
+.modal-content h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.tab-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.tab-btn {
+    background-color: #eee;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    flex-grow: 1;
+    border-radius: 5px;
+    margin: 0 5px;
+    transition: background-color 0.3s ease;
+}
+
+.tab-btn.active {
+    background-color: #007bff;
+    color: white;
+}
+
+.tab-btn:hover:not(.active) {
+    background-color: #ddd;
+}
+
+.tab-content {
+    display: none; /* Gizli saxla */
+}
+
+.tab-content.active {
+    display: block; /* Aktiv olanı göstər */
+}
+
+.modal-content form label {
+    text-align: left;
+    margin-top: 10px;
+}
+
+.modal-content form input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.modal-content .auth-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.modal-content .auth-button:hover {
+    background-color: #0056b3;
+}
+
+.forgot-password {
+    display: block;
+    text-align: right;
+    font-size: 0.9rem;
+    color: #007bff;
+    text-decoration: none;
+    margin-bottom: 15px;
+}
+
+/* Aşağı Mobil Naviqasiya Paneli Stili */
+.bottom-nav {
+    display: none; /* Masaüstündə gizli */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    height: 60px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: env(safe-area-inset-bottom); /* iPhone X üçün boşluq */
+    z-index: 999;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #777;
+    font-size: 0.75rem;
+    padding: 5px;
+    transition: color 0.3s ease;
+}
+
+.nav-item.active, .nav-item:hover {
+    color: #007bff;
+}
+
+.nav-item .fas {
+    font-size: 1.5rem;
+    margin-bottom: 3px;
+}
+
+.cart-count, .notification-count-bottom {
+    background-color: #ff4500;
+    color: white;
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    transform: translate(50%, -50%);
+}
+
+.add-button { /* Mərkəzdəki böyük '+' düyməsi */
+    background-color: #007bff;
+    color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    position: relative;
+    top: -15px; /* Aşağı navın üzərinə çıxır */
+}
+
+.add-button .fas {
+    color: white;
+    margin: 0;
+}
+
 /* Mobil görünüş üçün Media Query */
 @media (max-width: 768px) {
-    header {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .logo {
-        width: 100%;
-        text-align: center;
-        margin-bottom: 10px;
-    }
-
     .hamburger-menu {
-        display: block;
-        position: absolute;
-        right: 20px;
-        top: 25px;
+        display: block; /* Mobil cihazlarda göstər */
     }
 
-    .main-nav {
-        position: fixed;
-        top: 0;
-        left: -100%;
+    .header-top {
+        justify-content: space-between; /* Hamburgeri sola, ikonları sağa atır */
+    }
+
+    .header-icons {
+        margin-left: auto; /* Sağ tərəfə itələyir */
+    }
+
+    .search-bar-container {
         width: 100%;
-        height: 100%;
-        background-color: rgba(0,0,0,0.9);
-        transition: left 0.3s ease-in-out;
-        z-index: 1000;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
+        margin-top: 10px;
     }
 
-    .main-nav.active {
-        left: 0;
+    .main-nav { /* Mobil menyu */
+        display: block; /* Mobil cihazlarda JavaScript ilə göstəriləcək */
     }
 
-    .main-nav ul {
-        flex-direction: column;
-        text-align: center;
+    .bottom-nav {
+        display: flex; /* Mobil cihazlarda göstər */
     }
 
-    .main-nav ul li {
-        margin: 15px 0;
+    /* Masaüstündə gizlədiləcək elementlər */
+    /* Sizdə yox idilər, əgər varsa, burada gizlədilməlidir */
+}
+
+@media (min-width: 769px) { /* Masaüstü görünüş üçün */
+    .hamburger-menu, .main-nav, .bottom-nav {
+        display: none !important; /* Masaüstündə tamamilə gizlət */
     }
 
-    .main-nav ul li a {
-        font-size: 24px;
-        color: white;
+    .header-top {
+        justify-content: flex-end; /* Logo yoxdursa, digərləri sağa yığılsın */
     }
 
-    .hamburger-menu.active .bar:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
-    .hamburger-menu.active .bar:nth-child(2) {
-        opacity: 0;
-    }
-    .hamburger-menu.active .bar:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-    }
-
-    .panels-container, .feature-grid, .game-listing {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .panel, .feature-item, .game-card {
-        min-width: 90%;
-        max-width: 90%;
-    }
-
-    .game-detail-content {
-        margin: 20px auto;
-        padding: 20px;
-    }
-
-    .purchase-options input, .purchase-options button, .whatsapp-button {
-        width: 100%; /* Mobil görünüşdə tam genişlik */
+    .logo-container {
+        display: block; /* Logo göstərilir */
+        margin-right: auto; /* Logonu sola itələyir */
     }
 }
