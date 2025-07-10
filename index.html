@@ -3,77 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saytımız</title>
+    <title>Seyidoff Shop</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header>
-        <nav>
-            <div class="logo">Oyun Mağazası</div>
+        <div class="logo">Seyidoff Shop</div>
+        <button class="hamburger-menu" aria-label="Menyu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <nav class="main-nav">
             <ul>
-                <li><a href="index.html">Əsas Səhifə</a></li>
-                <li><a href="login.html">Giriş / Qeydiyyat</a></li>
-                <li><a href="cart.html">Səbət</a></li>
-                <li><a href="contact.html">Əlaqə</a></li>
-                <li><a href="admin.html">Admin Panel</a></li>
+                <li><a href="#home">Ana Səhifə</a></li>
+                <li><a href="#services">Xidmətlər</a></li>
+                <li><a href="#about">Haqqımızda</a></li>
+                <li><a href="#contact">Əlaqə</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section class="banner-section main-banner">
-            <img src="https://via.placeholder.com/1200x400?text=BOYUK+AKSIYA+BANNERI" alt="Böyük Aksiya Banneri">
-            <div class="banner-content">
-                <h2>İNDİ ENDİRİMDƏ!</h2>
-                <p>Seçilmiş xidmətlərdə inanılmaz fürsətləri qaçırmayın!</p>
-                <a href="index.html" class="banner-button">Hamsına bax</a>
+        <section id="home" class="hero">
+            <h1>Xoş Gəlmisiniz, Seyidoff Shopa</h1>
+            <p>Sizə ən yaxşı xidməti təqdim edirik.</p>
+        </section>
+
+        <section id="features" class="features">
+            <h2>Əsas Xüsusiyyətlər</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <i class="fas fa-shopping-cart"></i>
+                    <h3>Asan Alış-veriş</h3>
+                    <p>Məhsullarımızı rahatlıqla sifariş edin.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-truck"></i>
+                    <h3>Sürətli Çatdırılma</h3>
+                    <p>Sifarişlərinizi tez bir zamanda əldə edin.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-headset"></i>
+                    <h3>24/7 Dəstək</h3>
+                    <p>Hər zaman xidmətinizdəyik.</p>
+                </div>
             </div>
         </section>
 
-        <section class="banner-section small-banners">
-            <div class="small-banner-item">
-                <img src="https://via.placeholder.com/600x200?text=BALANS+ARTIR" alt="Balans Artır">
+        <section id="panels" class="panels-container">
+            <div class="panel">
+                <h3>Panel 1</h3>
+                <p>Bu birinci paneldir. Məlumatlar buraya yerləşdirilə bilər.</p>
+            </div>
+            <div class="panel">
+                <h3>Panel 2</h3>
+                <p>Bu ikinci paneldir. Buraya əlavə məlumatlar daxil edin.</p>
+            </div>
+            <div class="panel balance-panel">
                 <h3>Balans Artır</h3>
+                <p>Balansınızı rahatlıqla artırın.</p>
+                <input type="number" placeholder="Məbləğ daxil edin">
+                <button>Artır</button>
             </div>
-            <div class="small-banner-item">
-                <img src="https://via.placeholder.com/600x200?text=TELEGRAM+KANALI" alt="Telegram Kanalı">
-                <h3>Telegram Kanalı</h3>
+            <div class="panel">
+                <h3>Panel 3</h3>
+                <p>Bu üçüncü paneldir. Daha çox məlumat üçün.</p>
             </div>
         </section>
 
-        ---
-
-        <section class="info-banner-top">
-            <h2>SEYIDOFF_SHOPP</h2>
-            <p>Sayt işləmir, sadəcə praktika üçün yaradılıb.🙏🏻<br>Sifariş üçün aşağıdakı linklərdən əlaqə saxlayın:</p>
-            <p>
-                <a href="https://www.instagram.com/seyidoff_shopp" target="_blank">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" style="width:30px;height:30px;vertical-align:middle;margin-right:5px;"> @seyidoff_shopp
-                </a>
-                <br>
-                <a href="https://wa.me/994777696100" target="_blank">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width:30px;height:30px;vertical-align:middle;margin-right:5px;"> +994 77 769 61 00
-                </a>
-            </p>
+        <section id="about" class="about">
+            <h2>Haqqımızda</h2>
+            <p>Seyidoff Shop ən yeni texnologiya məhsullarını təklif edir. Müştəri məmnuniyyəti bizim prioritetimizdir.</p>
         </section>
 
-        ---
-
-        <h1>Xidmətlərimiz</h1>
-        <section class="services-section">
-            <p>Burada təklif etdiyimiz əsas xidmətləriniz haqqında məlumat yerləşdirilə bilər. Məsələn, sürətli çatdırılma, 24/7 dəstək və s.</p>
-        </section>
-
-        <h2>Oyunlar</h2>
-        <section id="game-listing" class="game-grid">
+        <section id="contact" class="contact">
+            <h2>Bizimlə Əlaqə</h2>
+            <p>Hər hansı bir sualınız varsa, bizə yazmaqdan çəkinməyin.</p>
+            <form>
+                <input type="text" placeholder="Adınız">
+                <input type="email" placeholder="Emailiniz">
+                <textarea placeholder="Mesajınız"></textarea>
+                <button type="submit">Göndər</button>
+            </form>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Oyun Mağazası. Bütün hüquqlar qorunur.</p>
+        <p>&copy; 2024 Seyidoff Shop. Bütün hüquqlar qorunur.</p>
     </footer>
 
-    <script src="cart.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
