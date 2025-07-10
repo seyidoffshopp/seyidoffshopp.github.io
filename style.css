@@ -137,7 +137,7 @@ header {
     transition: color 0.3s ease, transform 0.2s ease;
 }
 .search-button:hover {
-    color: #1a73e8; /* Yeniləndi: #0056b3 -> #1a73e8 (hover üçün də eyni əsas rəng) */
+    color: #145cb3; /* Yeniləndi: #0056b3 -> #145cb3 (hover üçün də eyni əsas rəng) */
     transform: scale(1.1);
 }
 
@@ -1427,10 +1427,432 @@ header {
         color: #28a745; /* Yaşıl, yaxşıdır */
     }
     #clear-cart-btn {
-        background-color: #ffc107; /* Yeniləndi: #f39c12 -> #ffc107 */
+        background-color: #ffc107; /* Yeniləndi: #f39c12 -> #ffc107 (sarı) */
     }
     #clear-cart-btn:hover {
-        background-color: #e0a800; /* Yeniləndi: #e67e22 -> #e0a800 */
+        background-color: #e0a800; /* Yeniləndi: #e67e22 -> #e0a800 (tünd sarı) */
+    }
+    #checkout-form label {
+        color: #343a40; /* Yeniləndi: #333 -> #343a40 */
+    }
+    .primary-button {
+        background-color: #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
+    }
+    .primary-button:hover {
+        background-color: #145cb3; /* Yeniləndi: #0056b3 -> #145cb3 */
+    }
+    .secondary-button {
+        background-color: #6c757d; /* Boz, yaxşıdır */
+    }
+    .secondary-button:hover {
+        background-color: #5a6268; /* Bozun tünd tonu, yaxşıdır */
+    }
+
+
+/* DESKTOP/TABLET STYLES (min-width: 769px) */
+@media (min-width: 769px) {
+    /* Gizlədiləcək elementlər */
+    .hamburger-menu, .bottom-nav, .close-menu-btn {
+        display: none; /* Masaüstündə gizlət */
+    }
+
+    /* HEADER */
+    header {
+        flex-direction: row; /* Elementləri yan-yana düz */
+        justify-content: space-between; /* Elementləri aralı yerləşdir */
+        padding: 15px 40px; /* Böyük ekranlar üçün padding */
+    }
+
+    .header-top {
+        flex-wrap: nowrap; /* Elementlərin bir sətrdə qalmasını təmin et */
+        justify-content: flex-start; /* Sola doğru sırala */
+        margin-bottom: 0;
+        width: auto;
+    }
+
+    .logo-container {
+        margin-bottom: 0;
+        width: auto;
+        text-align: left;
+        justify-content: flex-start;
+        margin-right: auto; /* Logo və axtarış çubuğu arasında boşluq */
+    }
+    .logo {
+        font-size: 2.2rem; /* Normal logo ölçüsünə qayıt */
+        margin-right: 15px;
+    }
+    .logo-link {
+        font-size: 0.95rem;
+    }
+
+    .header-icons {
+        margin-left: 20px; /* Normal margin */
+        margin-top: 0;
+        order: initial;
+    }
+    .header-icons .fas {
+        font-size: 28px;
+        margin-left: 20px;
+        color: #6c757d; /* Yeniləndi: #555 -> #6c757d */
+    }
+    .notification-count {
+        top: -10px;
+        right: -10px;
+        font-size: 0.8rem;
+        padding: 4px 8px;
+        background-color: #dc3545; /* Yeniləndi: #ff4d4d -> #dc3545 */
+    }
+
+    .search-bar-container {
+        width: auto; /* Avtomatik genişliyə qayıt */
+        max-width: 400px; /* Maksimum genişlik */
+        margin-left: 20px; /* Soldan boşluq */
+        margin-top: 0;
+        order: initial;
+        padding: 10px 20px;
+    }
+    .search-input {
+        font-size: 1.1rem;
+        color: #343a40; /* Yeniləndi: #333 -> #343a40 */
+    }
+    .search-button {
+        font-size: 1.3rem;
+        color: #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
+    }
+
+    /* MAIN NAV (Desktop) */
+    .main-nav {
+        display: block; /* Masaüstündə göstər */
+        position: static; /* Sabit mövqeyini ləğv et */
+        left: auto;
+        width: auto;
+        height: auto;
+        background-color: transparent; /* Fon rəngini sıfırla */
+        box-shadow: none; /* Kölgəni ləğv et */
+        padding-top: 0; /* Paddingi sıfırla */
+        order: -1; /* Headerin altında, amma header-top-dan əvvəl gəlsin */
+    }
+    .main-nav ul {
+        display: flex; /* Menyunu üfüqi yerləşdir */
+        justify-content: center;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    .main-nav ul li {
+        border-bottom: none;
+        margin: 0 15px; /* Hər menyu elementi arasında boşluq */
+    }
+    .main-nav ul li a {
+        padding: 10px 0;
+        color: #343a40; /* Yeniləndi: #444 -> #343a40 */
+        font-weight: normal; /* Normal çəki */
+        font-size: 1rem;
+    }
+    .main-nav ul li a .fas {
+        margin-right: 8px; /* İkonlar və mətn arasında daha az boşluq */
+        font-size: 1.1rem; /* İkon ölçüsü */
+        color: #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
+    }
+
+    /* MAIN CONTENT */
+    main {
+        max-width: 1200px; /* Mərkəzi məzmunun maksimum eni */
+        margin: 20px auto; /* Mərkəzdə yerləşdir, yuxarıdan boşluq */
+        padding: 0 20px; /* Yanlardan padding */
+    }
+    .page-content, .game-detail-content, .notifications-container, #cart-items-container, #checkout-form {
+        width: auto; /* Avtomatik genişlik */
+        max-width: 900px; /* Ümumi max-width təyin et */
+        margin: 40px auto; /* Normal margin */
+        padding: 40px; /* Normal padding */
+    }
+    .page-content h2, .game-detail-content h2, .notifications-container h2 {
+        font-size: 2.5rem; /* Normal ölçüyə qayıt */
+        margin-bottom: 40px;
+        color: #1a73e8; /* Yeniləndi: #0056b3 -> #1a73e8 */
+    }
+    .page-content h2::after {
+        width: 80px; /* Normal en */
+        height: 4px; /* Normal hündürlük */
+        background-color: #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
+        margin: 15px auto 0;
+    }
+    .page-content p {
+        font-size: 1.15rem; /* Normal ölçüyə qayıt */
+        margin-bottom: 20px;
+        color: #343a40; /* Yeniləndi: #444 -> #343a40 */
+    }
+    .page-content form {
+        padding: 30px;
+    }
+    .contact-info {
+        margin-top: 40px;
+        padding-top: 25px;
+    }
+    .contact-info h3 {
+        font-size: 1.6rem;
+        color: #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
+    }
+    .contact-info p {
+        font-size: 1.05rem;
+        margin-bottom: 12px;
+        color: #6c757d; /* Yeniləndi: #555 -> #6c757d */
+    }
+    .contact-info p .fas {
+        margin-right: 12px;
+        font-size: 1.2rem;
+        color: #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
+    }
+
+
+    /* HERO BANNER */
+    .hero-banner {
+        min-height: 400px; /* Masaüstü üçün daha böyük hündürlük */
+        margin-top: 30px;
+    }
+    .hero-logo {
+        font-size: 4.5rem; /* Normal ölçüyə qayıt */
+    }
+    .hero-slogan {
+        font-size: 1.5rem; /* Normal ölçüyə qayıt */
+    }
+    .carousel-caption {
+        padding: 20px;
+        bottom: 10%;
+    }
+    .carousel-caption h5 {
+        font-size: 36px;
+    }
+    .carousel-caption p {
+        font-size: 18px;
+        display: block; /* Paraqrafı göstər */
+    }
+
+    /* CATEGORIES SECTION */
+    .categories-section {
+        padding: 30px;
+        margin-top: 30px;
+    }
+    .categories-header {
+        flex-direction: row; /* Elementləri yan-yana düz */
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+    .categories-header h2 {
+        font-size: 2rem; /* Normal ölçüyə qayıt */
+        color: #343a40; /* Yeniləndi: #2c3e50 -> #343a40 */
+    }
+    .view-all {
+        padding: 8px 18px;
+        font-size: 1rem;
+        color: #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
+        border: 2px solid #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
+    }
+    .view-all:hover {
+        background-color: #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
+    }
+    .game-listing {
+        gap: 30px; /* Normal boşluq */
+        margin-top: 25px;
+    }
+    .game-card {
+        width: 180px; /* Kartın normal eni */
+        max-width: none;
+        padding: 20px;
+        border-radius: 20px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    }
+    .game-card:hover {
+        transform: translateY(-10px) scale(1.03);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    }
+    .game-card img {
+        height: 120px;
+        border-radius: 12px;
+        margin-bottom: 15px;
+    }
+    .game-card:hover img {
+        border-color: #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
+    }
+    .game-card h3 {
+        font-size: 1.3rem;
+        margin-bottom: 8px;
+        height: 3.2em;
+        color: #343a40; /* Yeniləndi: #2c3e50 -> #343a40 */
+    }
+
+    /* GAME DETAIL PAGE */
+    .game-detail-content {
+        max-width: 650px;
+        padding: 35px;
+    }
+    .game-detail-content h2 {
+        font-size: 2.4rem;
+        margin-bottom: 25px;
+        color: #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
+    }
+    .game-detail-content p {
+        font-size: 1.05rem;
+        margin-bottom: 25px;
+        color: #6c757d; /* Yeniləndi: #555 -> #6c757d */
+    }
+    .game-detail-content ul li {
+        padding: 12px;
+        font-size: 1.15rem;
+        color: #343a40; /* Yeniləndi: #333 -> #343a40 */
+    }
+    .purchase-options {
+        margin-top: 30px;
+        padding-top: 30px;
+    }
+    .purchase-options label {
+        font-size: 1rem;
+        color: #343a40; /* Yeniləndi: #333 -> #343a40 */
+    }
+    .purchase-options input[type="text"],
+    .purchase-options input[type="email"] {
+        padding: 12px;
+        margin-bottom: 20px;
+        font-size: 1.05rem;
+    }
+    .price-bonus-row {
+        flex-direction: row; /* Normal vəziyyətə qaytar */
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 25px;
+        padding: 15px;
+    }
+    .price-bonus-row .quantity-control button {
+        background-color: #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
+    }
+    .price-bonus-row .quantity-control button:hover {
+        background-color: #145cb3; /* Yeniləndi: #0056b3 -> #145cb3 */
+    }
+    .price-bonus-row .quantity-display {
+        font-size: 1.3rem;
+        color: #343a40; /* Yeniləndi: #333 -> #343a40 */
+    }
+    .price-bonus-row .price-info {
+        font-size: 1.25rem;
+        color: #28a745; /* Yaşıl, yaxşıdır */
+    }
+    .price-bonus-row .price-info .bonus {
+        font-size: 1.1rem;
+        color: #ffc107; /* Sarı, yaxşıdır */
+    }
+    .payment-methods h4 {
+        font-size: 1.4rem;
+        color: #343a40; /* Yeniləndi: #333 -> #343a40 */
+    }
+    .payment-method-item:hover {
+        border-color: #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
+    }
+    .payment-method-item.selected {
+        border-color: #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
+    }
+    .payment-method-item .method-icon {
+        color: #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
+    }
+    .payment-method-item .method-name {
+        color: #343a40; /* Yeniləndi: #333 -> #343a40 */
+    }
+    .order-buttons .order-confirm-button {
+        background-color: #28a745; /* Yaşıl, yaxşıdır */
+    }
+    .order-buttons .order-cancel-button {
+        background-color: #dc3545; /* Qırmızı, yaxşıdır */
+    }
+    .whatsapp-button {
+        background-color: #25D366; /* WhatsApp yaşılı, yaxşıdır */
+    }
+    .whatsapp-button:hover {
+        background-color: #1DA851; /* WhatsApp yaşılının tünd tonu, yaxşıdır */
+    }
+
+    /* MODAL */
+    .modal-content {
+        background-color: #fefefe;
+    }
+    .close-button {
+        color: #adb5bd; /* Yeniləndi: #aaa -> #adb5bd */
+    }
+    .close-button:hover,
+    .close-button:focus {
+        color: #343a40; /* Yeniləndi: #333 -> #343a40 */
+    }
+    .modal-content h2 {
+        color: #343a40; /* Yeniləndi: #333 -> #343a40 */
+    }
+    .tab-buttons {
+        background-color: #e6f7ff; /* Yaxşıdır */
+    }
+    .tab-btn.active {
+        background-color: #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
+    }
+    .tab-btn:hover:not(.active) {
+        background-color: #dbe9f5; /* Yaxşıdır */
+    }
+    .modal-content form input {
+        background-color: #f8faff; /* Yaxşıdır */
+    }
+    .modal-content .auth-button {
+        background-color: #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
+    }
+    .modal-content .auth-button:hover {
+        background-color: #145cb3; /* Yeniləndi: #0056b3 -> #145cb3 */
+    }
+    .forgot-password {
+        color: #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
+    }
+    .forgot-password:hover {
+        color: #145cb3; /* Yeniləndi: #0056b3 -> #145cb3 */
+    }
+
+    .nav-item {
+        color: #6c757d; /* Yeniləndi: #777 -> #6c757d */
+    }
+    .nav-item:hover {
+        color: #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
+    }
+    .nav-item.active {
+        color: #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
+    }
+    .cart-count, .notification-count-bottom {
+        background-color: #dc3545; /* Yeniləndi: #e74c3c -> #dc3545 */
+    }
+    .balance-add-button {
+        color: #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
+    }
+    .balance-add-button .fas {
+        color: #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
+    }
+
+    /* CART PAGE */
+    .cart-item p {
+        color: #6c757d; /* Yeniləndi: #444 -> #6c757d */
+    }
+    .cart-item strong {
+        color: #343a40; /* Yeniləndi: #2c3e50 -> #343a40 */
+    }
+    .remove-from-cart-btn {
+        background-color: #dc3545; /* Yeniləndi: #e74c3c -> #dc3545 */
+    }
+    .remove-from-cart-btn:hover {
+        background-color: #c82333; /* Yeniləndi: #c0392b -> #c82333 */
+    }
+    #cart-summary {
+        color: #343a40; /* Yeniləndi: #2c3e50 -> #343a40 */
+    }
+    #total-price {
+        color: #28a745; /* Yaşıl, yaxşıdır */
+    }
+    #clear-cart-btn {
+        background-color: #ffc107; /* Yeniləndi: #f39c12 -> #ffc107 (sarı) */
+    }
+    #clear-cart-btn:hover {
+        background-color: #e0a800; /* Yeniləndi: #e67e22 -> #e0a800 (tünd sarı) */
     }
     #checkout-form label {
         color: #343a40; /* Yeniləndi: #333 -> #343a40 */
