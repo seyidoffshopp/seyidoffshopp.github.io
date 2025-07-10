@@ -1,1 +1,0 @@
-# seyidoffshopp.github.io
