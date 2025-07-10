@@ -23,18 +23,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const tabContents = document.querySelectorAll('.modal .tab-content');
 
     function openPersonalCabinetModal(e) {
-        e.preventDefault();
+        e.preventDefault(); // Linkin səhifəni yeniləməsinin qarşısını alır
         personalCabinetModal.style.display = 'block';
     }
 
     if (personalCabinetBtn && personalCabinetModal) {
         personalCabinetBtn.addEventListener('click', openPersonalCabinetModal);
     }
-    if (balanceAddButton && personalCabinetModal) {
+    if (balanceAddButton && personalCabinetModal) { // Balans Artır düyməsini də eyni modala bağlayırıq
         balanceAddButton.addEventListener('click', openPersonalCabinetModal);
     }
 
-    if (personalCabinetModal) {
+    if (personalCabinetModal) { // Modal elementi mövcuddursa yalnız bu kodu işə sal
         if (closeModalButton) {
             closeModalButton.addEventListener('click', () => {
                 personalCabinetModal.style.display = 'none';
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Şəxsi Kabinet Modal Funksionallığı Sonu
 
     // Oyun/Xidmət Məlumatları (Şəkil adlarını yoxlayın!)
-    const gameListing = document.getElementById('game-listing'); // Bu ID index.html-də olmalıdır!
+    const gameListing = document.getElementById('game-listing');
 
     const games = [
         {
@@ -106,13 +106,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 { quantity: 1000, amount: 20 }, { quantity: 1500, amount: 30 }
             ],
             type: 'whatsapp_contact',
-            whatsappNumber: '994777696100'
+            whatsappNumber: '994777696100' // Sizin WhatsApp nömrəniz
         }
     ];
 
-    // Oyunları göstərən funksiya
+    // Oyunları ana səhifədə göstərən funksiya
     function displayGames() {
-        if (gameListing) { // gameListing elementinin mövcudluğunu yoxlayın
+        if (gameListing) { // gameListing elementi mövcuddursa işlət
             gameListing.innerHTML = ''; // Mövcud "Oyunlar yüklənir..." mətnini təmizlə
             games.forEach(game => {
                 const gameCard = document.createElement('div');
@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // game-detail.html səhifəsi üçün JavaScript məntiqi Başlanğıcı
     const gameDetailContainer = document.getElementById('game-detail-container');
-    if (gameDetailContainer) {
+    if (gameDetailContainer) { // Bu yalnız game-detail.html səhifəsində işləyəcək
         const urlParams = new URLSearchParams(window.location.search);
         const gameId = parseInt(urlParams.get('id'));
         const game = games.find(g => g.id === gameId);
@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 purchaseOptionsHtml = `
                     <div class="purchase-options">
                         <label for="gameIdInput">Player ID:</label>
-                        <input type="text" id="gameIdInput" placeholder="Free Fire ID nömrənizi daxil edin." required>
+                        <input type="text" id="gameIdInput" placeholder="Oyunçu ID-nizi daxil edin." required>
                         
                         <div class="price-bonus-row">
                             <div class="quantity-control">
@@ -199,7 +199,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         </a>
                     </div>
                 `;
-            } else { // Digər oyun növləri üçün standart forma
+            } else { // Digər oyun növləri üçün standart forma (hal-hazırda istifadə olunmur)
                 purchaseOptionsHtml = `
                     <div class="purchase-options">
                         <input type="text" placeholder="İstifadəçi ID / Nick">
@@ -224,7 +224,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 const currentPriceSpan = gameDetailContainer.querySelector('.current-price');
                 let currentQuantityIndex = 0;
 
-                // Başlanğıc qiyməti və miqdarı təyin et
                 if (game.prices.length > 0) {
                     currentPriceSpan.textContent = `${game.prices[currentQuantityIndex].amount} Azn`;
                     quantityDisplay.textContent = game.prices[currentQuantityIndex].quantity;
