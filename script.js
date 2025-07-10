@@ -427,3 +427,292 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
+// Game Detail Page Logic (game-detail.html)
+document.addEventListener('DOMContentLoaded', () => {
+    // Only run this script if we are on the game-detail.html page
+    if (document.body.classList.contains('game-detail-page')) { 
+        const urlParams = new URLSearchParams(window.location.search);
+        const gameId = urlParams.get('game');
+
+        const gameData = {
+            'freefire': {
+                title: 'Garena Free Fire',
+                description: 'Garena Free Fire mobil cihazlar üçün hazırlanmış sağ qalma atıcılıq oyunudur. Hər 10 dəqiqəlik oyun sizə naməlum bir adaya yerləşdirir, burada 49 digər oyunçu ilə birlikdə sağ qalmağa çalışırsınız.',
+                image: 'img/ff.jpg',
+                features: [
+                    'Platforma: Mobil (Android, iOS)',
+                    'Janr: Battle Royale, Atıcılıq',
+                    'Qiymət: 15.00 AZN'
+                ]
+            },
+            'pubgmobile': {
+                title: 'PUBG Mobile',
+                description: 'PlayerUnknown\'s Battlegrounds (PUBG) Mobile, yüz oyunçunun bir adaya düşərək silah və avadanlıq topladığı və sona qədər sağ qalmaq üçün digər oyunçuları məğlub etməyə çalışdığı bir battle royale oyunudur.',
+                image: 'img/pubg.jpg',
+                features: [
+                    'Platforma: Mobil (Android, iOS)',
+                    'Janr: Battle Royale, Atıcılıq',
+                    'Qiymət: 20.00 AZN'
+                ]
+            },
+            'tiktok': {
+                title: 'TikTok Hesabımız',
+                description: 'Ən son yeniliklər, oyunlar haqqında maraqlı videolar və kampaniyalar üçün Seyidoff Shopp TikTok hesabımızı izləyin!',
+                image: 'img/tt.jpg',
+                features: [
+                    'Platforma: TikTok',
+                    'Janr: Sosial Media, Promo',
+                    'Qiymət: Pulsuz'
+                ]
+            },
+            'csgo': {
+                title: 'Counter-Strike: Global Offensive',
+                description: 'CS:GO, dünyanın ən populyar taktiki atıcılıq oyunlarından biridir. İki komanda (terrorçular və əks-terrorçılar) arasında partlayıcı obyektləri yerləşdirmək və ya zərərsizləşdirmək üçün mübarizə gedir.',
+                image: 'https://via.placeholder.com/300x200?text=CS:GO',
+                features: [
+                    'Platforma: PC',
+                    'Janr: Taktiki Atıcılıq',
+                    'Qiymət: 25.00 AZN'
+                ]
+            },
+            'valorant': {
+                title: 'Valorant',
+                description: 'Valorant, Riot Games tərəfindən hazırlanmış 5v5 taktiki atıcılıq oyunudur. Hər oyunçu unikal bacarıqlara malik bir agent seçir və düşmən komandanı məğlub etmək üçün strategiya qurur.',
+                image: 'https://via.placeholder.com/300x200?text=Valorant',
+                features: [
+                    'Platforma: PC',
+                    'Janr: Taktiki Atıcılıq',
+                    'Qiymət: 18.00 AZN'
+                ]
+            },
+            'gta5': {
+                title: 'Grand Theft Auto V',
+                description: 'GTA V, böyük bir açıq dünya macəra oyunudur. Oyunçular Los Santos şəhərində üç fərqli cinayətkarın həyatını yaşayır, missiyaları tamamlayır və şəhəri kəşf edirlər.',
+                image: 'https://via.placeholder.com/300x200?text=GTA+V',
+                features: [
+                    'Platforma: PC, PlayStation, Xbox',
+                    'Janr: Açıq Dünya, Macəra',
+                    'Qiymət: 40.00 AZN'
+                ]
+            },
+            'lol': {
+                title: 'League of Legends',
+                description: 'League of Legends, iki komandanın güclü çempionları idarə edərək düşmən bazasını məhv etməyə çalışdığı məşhur bir MOBA oyunudur.',
+                image: 'https://via.placeholder.com/300x200?text=LoL',
+                features: [
+                    'Platforma: PC',
+                    'Janr: MOBA',
+                    'Qiymət: Pulsuz Oynamaq'
+                ]
+            },
+            'apex': {
+                title: 'Apex Legends',
+                description: 'Apex Legends, Respawn Entertainment tərəfindən hazırlanmış sürətli, komanda əsaslı bir battle royale atıcılıq oyunudur. Unikal əfsanələr və bacarıqlar ilə rəqiblərinizlə döyüşün.',
+                image: 'https://via.placeholder.com/300x200?text=Apex',
+                features: [
+                    'Platforma: PC, PlayStation, Xbox, Switch',
+                    'Janr: Battle Royale, Atıcılıq',
+                    'Qiymət: Pulsuz Oynamaq'
+                ]
+            },
+            'minecraft': {
+                title: 'Minecraft',
+                description: 'Minecraft, oyunçuların bloklardan inşa edib sonsuz dünyaları kəşf etdiyi bir sandbox oyunudur. Yaradıcılıq və sağ qalma rejimlərində sonsuz imkanlar təqdim edir.',
+                image: 'https://via.placeholder.com/300x200?text=Minecraft',
+                features: [
+                    'Platforma: PC, Mobil, Konsol',
+                    'Janr: Sandbox, Həyatda qalma',
+                    'Qiymət: 30.00 AZN'
+                ]
+            }
+        };
+
+        const game = gameData[gameId];
+        const gameDetailContainer = document.getElementById('game-detail-container');
+
+        if (game) {
+            gameDetailContainer.innerHTML = `
+                <img id="game-detail-image" src="${game.image}" alt="${game.title}" style="max-width: 100%; height: auto; border-radius: 10px; margin-bottom: 25px;">
+                <h2 id="game-detail-title">${game.title}</h2>
+                <p id="game-detail-description">${game.description}</p>
+                
+                <h3 id="features-heading">Oyun Xüsusiyyətləri:</h3>
+                <ul id="game-detail-features"></ul>
+
+                <div class="purchase-options">
+                    <label for="email-input">E-mail adresi:</label>
+                    <input type="email" id="email-input" placeholder="Oyunun göndəriləcəyi E-mail">
+
+                    <label for="phone-input">Telefon Nömrəsi:</label>
+                    <input type="text" id="phone-input" placeholder="Əlaqə üçün telefon nömrəsi (Whatsapp)">
+                    
+                    <div class="price-bonus-row">
+                        <div class="quantity-control">
+                            <button id="minus-quantity">-</button>
+                            <span id="quantity-display" class="quantity-display">1</span>
+                            <button id="plus-quantity">+</button>
+                        </div>
+                        <div class="price-info">
+                            <span id="game-price">0.00 AZN</span>
+                            <span class="bonus"> (+0 bonus)</span>
+                        </div>
+                    </div>
+
+                    <div class="payment-methods">
+                        <h4>Ödəniş Metodları</h4>
+                        <div class="payment-method-grid">
+                            <div class="payment-method-item" data-method="bank-card">
+                                <i class="fas fa-credit-card method-icon"></i>
+                                <div class="method-name">Bank Kartı</div>
+                                <div class="method-desc">Visa / Mastercard</div>
+                            </div>
+                            <div class="payment-method-item" data-method="epay">
+                                <i class="fas fa-mobile-alt method-icon"></i>
+                                <div class="method-name">Mobil Ödəniş</div>
+                                <div class="method-desc">Azercell, Bakcell, Nar</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="order-buttons">
+                        <button class="order-confirm-button">Sifarişi Tamamla</button>
+                        <button class="order-cancel-button">Ləğv Et</button>
+                    </div>
+
+                    <a href="https://wa.me/YOUR_PHONE_NUMBER" class="whatsapp-button" target="_blank">
+                        <i class="fab fa-whatsapp"></i> WhatsApp Dəstək
+                    </a>
+                </div>
+            `;
+
+            const featuresList = document.getElementById('game-detail-features');
+            game.features.forEach(feature => {
+                const li = document.createElement('li');
+                li.textContent = feature;
+                featuresList.appendChild(li);
+            });
+
+            const purchaseOptionsDiv = document.querySelector('.purchase-options');
+            const featuresHeading = document.getElementById('features-heading');
+            const gamePriceElement = document.getElementById('game-price');
+            const whatsappButton = document.querySelector('.whatsapp-button');
+
+            if (game.features.some(f => f.startsWith('Qiymət:')) && game.features.find(f => f.startsWith('Qiymət:')).includes('AZN')) {
+                const priceText = game.features.find(f => f.startsWith('Qiymət:')).replace('Qiymət: ', '');
+                gamePriceElement.textContent = priceText;
+                purchaseOptionsDiv.style.display = 'block';
+                featuresHeading.style.display = 'block';
+                whatsappButton.href = `https://wa.me/YOUR_PHONE_NUMBER?text=${encodeURIComponent('Salam, mən ' + game.title + ' oyunu haqqında məlumat almaq istəyirəm.')}`;
+                whatsappButton.style.display = 'inline-flex';
+            } else {
+                purchaseOptionsDiv.style.display = 'none';
+                featuresHeading.style.display = 'block';
+                whatsappButton.style.display = 'none';
+                if (gameId === 'tiktok') {
+                    whatsappButton.href = `https://www.tiktok.com/@seyidoffshopp_test`; // TikTok profil linki
+                    whatsappButton.style.display = 'inline-flex';
+                    whatsappButton.textContent = "TikTok-a keçid";
+                    whatsappButton.innerHTML = `<i class="fab fa-tiktok"></i> TikTok-a keçid`;
+                    whatsappButton.onclick = (e) => { e.preventDefault(); window.open('https://www.tiktok.com/@seyidoffshopp_test', '_blank'); };
+                }
+            }
+
+            // Kəmiyyət artırma/azaltma funksionallığı
+            let quantity = 1;
+            const quantityDisplay = document.getElementById('quantity-display');
+            
+            if (quantityDisplay && gamePriceElement) {
+                const plusBtn = document.getElementById('plus-quantity');
+                const minusBtn = document.getElementById('minus-quantity');
+
+                if (plusBtn) {
+                    plusBtn.addEventListener('click', () => {
+                        quantity++;
+                        quantityDisplay.textContent = quantity;
+                        updateTotalPrice(game, quantity);
+                    });
+                }
+                if (minusBtn) {
+                    minusBtn.addEventListener('click', () => {
+                        if (quantity > 1) {
+                            quantity--;
+                            quantityDisplay.textContent = quantity;
+                            updateTotalPrice(game, quantity);
+                        }
+                    });
+                }
+                updateTotalPrice(game, quantity); // Səhifə yüklənəndə qiyməti bir dəfə yenilə
+            }
+
+            // Ödəniş metodu seçimi
+            document.querySelectorAll('.payment-method-item').forEach(item => {
+                item.addEventListener('click', () => {
+                    document.querySelectorAll('.payment-method-item').forEach(el => el.classList.remove('selected'));
+                    item.classList.add('selected');
+                    const selectedMethod = item.dataset.method;
+                    console.log('Seçilmiş ödəniş metodu:', selectedMethod);
+                });
+            });
+        } else {
+            gameDetailContainer.innerHTML = `
+                <h2>Oyun Tapılmadı</h2>
+                <p>Axtardığınız oyun tapılmadı. Lütfən, başqa bir oyun seçin.</p>
+            `;
+        }
+    }
+});
+
+// Mövcud hamburger menyusu və modal funksionallığı
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const mainNav = document.querySelector('.main-nav');
+    const closeMenuBtn = document.querySelector('.close-menu-btn');
+    const personalCabinetBtn = document.getElementById('personal-cabinet-btn');
+    const personalCabinetModal = document.getElementById('personal-cabinet-modal');
+    const closeModalButton = document.querySelector('.modal .close-button');
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    if (hamburgerMenu) {
+        hamburgerMenu.addEventListener('click', () => {
+            mainNav.classList.add('active');
+        });
+    }
+
+    if (closeMenuBtn) {
+        closeMenuBtn.addEventListener('click', () => {
+            mainNav.classList.remove('active');
+        });
+    }
+
+    if (personalCabinetBtn) {
+        personalCabinetBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            personalCabinetModal.style.display = 'block';
+        });
+    }
+
+    if (closeModalButton) {
+        closeModalButton.addEventListener('click', () => {
+            personalCabinetModal.style.display = 'none';
+        });
+    }
+
+    window.addEventListener('click', (event) => {
+        if (event.target == personalCabinetModal) {
+            personalCabinetModal.style.display = 'none';
+        }
+    });
+
+    tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const tab = button.dataset.tab;
+
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active'));
+
+            button.classList.add('active');
+            document.getElementById(`${tab}-tab`).classList.add('active');
+        });
+    });
+});
