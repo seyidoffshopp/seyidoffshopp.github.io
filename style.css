@@ -87,7 +87,6 @@ header {
     padding: 0 5px;
 }
 
-/* Hamburger menyu stili */
 .hamburger-menu {
     display: none;
     background: none;
@@ -108,7 +107,6 @@ header {
     transition: 0.4s;
 }
 
-/* Mobil menyu (soldan açılan) */
 .main-nav {
     position: fixed;
     top: 0;
@@ -165,11 +163,9 @@ header {
     z-index: 1002;
 }
 
-/* Hero Banner (indi daxilində mətn logo var) */
 .hero-banner {
     width: 100%;
     min-height: 200px;
-    /* Əgər banner.jpg faylınız yoxdursa, arxa fon boş olacaq */
     background: url('banner.jpg') no-repeat center center/cover;
     display: flex;
     flex-direction: column;
@@ -193,8 +189,6 @@ header {
     font-style: italic;
 }
 
-
-/* Kateqoriyalar Bölməsi */
 .categories-section {
     padding: 20px;
     background-color: white;
@@ -222,7 +216,6 @@ header {
     font-weight: bold;
 }
 
-/* Oyun kartları */
 .game-listing {
     display: flex;
     flex-wrap: wrap;
@@ -316,9 +309,8 @@ footer {
     margin-top: 20px;
 }
 
-/* game-detail.html üçün xüsusi stillər */
 .game-detail-content {
-    max-width: 600px; /* Modal kimi daha ensiz olsun */
+    max-width: 600px;
     margin: 40px auto;
     padding: 30px;
     background-color: white;
@@ -349,41 +341,39 @@ footer {
     font-size: 1.1rem;
 }
 
-/* Satın alma bölməsi stilləri (DolphGame pop-upına bənzər) */
 .purchase-options {
     margin-top: 25px;
     padding-top: 25px;
     border-top: 1px solid #eee;
-    text-align: left; /* Daxili elementləri sola hizala */
+    text-align: left;
 }
 
 .purchase-options label {
     display: block;
-    margin-bottom: 5px; /* Daha kiçik boşluq */
+    margin-bottom: 5px;
     font-weight: bold;
     color: #555;
-    font-size: 0.95rem; /* Daha kiçik şrift */
+    font-size: 0.95rem;
 }
 
 .purchase-options input[type="text"],
 .purchase-options input[type="email"] {
-    width: 100%; /* Tam genişlik */
-    padding: 10px; /* Daha kiçik padding */
+    width: 100%;
+    padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #ddd;
     border-radius: 5px;
     box-sizing: border-box;
     font-size: 1rem;
-    background-color: #f9f9f9; /* Boz fon DolphGame kimi */
+    background-color: #f9f9f9;
 }
 
-/* Qiymət və Bonus sətirləri */
 .price-bonus-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
-    background-color: #f0f0f0; /* Açık boz fon */
+    background-color: #f0f0f0;
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #e0e0e0;
@@ -402,7 +392,7 @@ footer {
     padding: 5px 10px;
     cursor: pointer;
     font-size: 1.2rem;
-    line-height: 1; /* Mətnin mərkəzdə olması üçün */
+    line-height: 1;
     margin: 0 5px;
 }
 .price-bonus-row .quantity-control button:hover {
@@ -419,15 +409,14 @@ footer {
     display: flex;
     align-items: center;
     font-weight: bold;
-    color: #28a745; /* Qiymət üçün yaşıl rəng */
+    color: #28a745;
 }
 
 .price-bonus-row .price-info .bonus {
     margin-left: 15px;
-    color: #ffc107; /* Bonus üçün sarı rəng */
+    color: #ffc107;
 }
 
-/* Ödəniş üsulu hissəsi */
 .payment-methods {
     margin-top: 30px;
 }
@@ -440,7 +429,7 @@ footer {
 
 .payment-method-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* 2-3 sütunluq qrid */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 15px;
 }
 
@@ -455,343 +444,4 @@ footer {
 }
 
 .payment-method-item:hover {
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    border-color: #007bff;
-}
-
-.payment-method-item.selected {
-    border-color: #007bff;
-    box-shadow: 0 0 0 2px #007bff; /* Mavi işıqlanma */
-}
-
-.payment-method-item .method-icon {
-    font-size: 2.5rem;
-    color: #007bff;
-    margin-bottom: 10px;
-}
-
-.payment-method-item .method-name {
-    font-weight: bold;
-    font-size: 0.9rem;
-    color: #333;
-}
-.payment-method-item .method-desc {
-    font-size: 0.8rem;
-    color: #777;
-}
-
-/* Ödəniş düymələri (Sifariş et, Çıxış) */
-.order-buttons {
-    display: flex;
-    justify-content: space-between;
-    gap: 15px;
-    margin-top: 30px;
-}
-
-.order-buttons button {
-    flex: 1;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.order-buttons .order-confirm-button {
-    background-color: #007bff;
-    color: white;
-}
-
-.order-buttons .order-confirm-button:hover {
-    background-color: #0056b3;
-}
-
-.order-buttons .order-cancel-button {
-    background-color: #dc3545; /* Qırmızı rəng */
-    color: white;
-}
-
-.order-buttons .order-cancel-button:hover {
-    background-color: #c82333;
-}
-
-/* WhatsApp düyməsi üçün stil (əvvəlki kimi qalır) */
-.whatsapp-button {
-    display: inline-flex;
-    align-items: center;
-    background-color: #25D366;
-    color: white;
-    text-decoration: none;
-    padding: 12px 25px;
-    border-radius: 5px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-    margin-top: 15px;
-    width: 100%;
-    justify-content: center;
-    box-sizing: border-box;
-}
-
-.whatsapp-button i {
-    margin-right: 10px;
-    font-size: 1.3rem;
-}
-
-.whatsapp-button:hover {
-    background-color: #1DA851;
-}
-
-/* Şəxsi Kabinet Modal Stili (əvvəlki kimi qalır) */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1003;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.4);
-    padding-top: 60px;
-}
-
-.modal-content {
-    background-color: #fefefe;
-    margin: 5% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 90%;
-    max-width: 400px;
-    border-radius: 8px;
-    position: relative;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    animation-name: animatetop;
-    animation-duration: 0.4s
-}
-
-@keyframes animatetop {
-    from {top: -300px; opacity: 0}
-    to {top: 5%; opacity: 1}
-}
-
-.close-button {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-    position: absolute;
-    top: 10px;
-    right: 15px;
-}
-
-.close-button:hover,
-.close-button:focus {
-    color: black;
-    text-decoration: none;
-}
-
-.modal-content h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-.tab-buttons {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-.tab-btn {
-    background-color: #eee;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 1rem;
-    flex-grow: 1;
-    border-radius: 5px;
-    margin: 0 5px;
-    transition: background-color 0.3s ease;
-}
-
-.tab-btn.active {
-    background-color: #007bff;
-    color: white;
-}
-
-.tab-btn:hover:not(.active) {
-    background-color: #ddd;
-}
-
-.tab-content {
-    display: none;
-}
-
-.tab-content.active {
-    display: block;
-}
-
-.modal-content form label {
-    text-align: left;
-    margin-top: 10px;
-}
-
-.modal-content form input {
-    width: calc(100% - 20px);
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-sizing: border-box;
-}
-
-.modal-content .auth-button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1.1rem;
-    transition: background-color 0.3s ease;
-    width: 100%;
-    margin-top: 10px;
-}
-
-.modal-content .auth-button:hover {
-    background-color: #0056b3;
-}
-
-.forgot-password {
-    display: block;
-    text-align: right;
-    font-size: 0.9rem;
-    color: #007bff;
-    text-decoration: none;
-    margin-bottom: 15px;
-}
-
-/* Aşağı Mobil Naviqasiya Paneli Stili Yeniləndi */
-.bottom-nav {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: white;
-    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
-    height: 60px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding-bottom: env(safe-area-inset-bottom);
-    z-index: 999;
-}
-
-.nav-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-    color: #777;
-    font-size: 0.75rem;
-    padding: 5px;
-    transition: color 0.3s ease;
-}
-
-.nav-item.active, .nav-item:hover {
-    color: #007bff;
-}
-
-.nav-item .fas {
-    font-size: 1.5rem;
-    margin-bottom: 3px;
-}
-
-.cart-count, .notification-count-bottom {
-    background-color: #ff4500;
-    color: white;
-    font-size: 0.7rem;
-    padding: 2px 6px;
-    border-radius: 50%;
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    transform: translate(50%, -50%);
-}
-
-.balance-add-button {
-    background-color: transparent;
-    color: #007bff;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5rem;
-    box-shadow: none;
-    position: static;
-    top: auto;
-}
-
-.balance-add-button .fas {
-    color: #007bff;
-    margin: 0;
-}
-
-/* Mobil görünüş üçün Media Query */
-@media (max-width: 768px) {
-    .hamburger-menu {
-        display: block;
-    }
-
-    .header-top {
-        justify-content: space-between;
-    }
-
-    .header-icons {
-        margin-left: auto;
-    }
-
-    .search-bar-container {
-        width: 100%;
-        margin-top: 10px;
-    }
-
-    .main-nav {
-        display: block;
-    }
-
-    .bottom-nav {
-        display: flex;
-    }
-
-    /* game-detail.html üçün mobil stillər */
-    .game-detail-content {
-        margin: 20px auto;
-        padding: 20px;
-        width: calc(100% - 40px); /* Kənarlardan boşluq */
-    }
-
-    .purchase-options input, .purchase-options button, .whatsapp-button {
-        width: 100%;
-    }
-}
-
-@media (min-width: 769px) {
-    .hamburger-menu, .main-nav, .bottom-nav {
-        display: none !important;
-    }
-
-    .header-top {
-        justify-content: flex-start;
-    }
-
-    .logo-container {
-        display: block;
-        margin-right: auto;
-    }
-}
+    box-shadow: 0 2px 8px rgba(0,0,0,0.
