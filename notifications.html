@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bildirişlər - Seyidoff Shopp</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Bu səhifəyə xas CSS əlavələri (istəyə görə) */
+        main {
+            padding: 20px;
+            min-height: calc(100vh - 150px); /* Header və Footer nəzərə alınaraq minimum hündürlük */
+        }
+        .notifications-container {
+            max-width: 800px;
+            margin: 40px auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .notification-item {
+            border-bottom: 1px solid #eee;
+            padding: 15px 0;
+            display: flex;
+            align-items: center;
+        }
+        .notification-item:last-child {
+            border-bottom: none;
+        }
+        .notification-icon {
+            font-size: 24px;
+            margin-right: 15px;
+            color: #007bff; /* Mavi rəngdə ikon */
+        }
+        .notification-content h3 {
+            margin: 0 0 5px 0;
+            font-size: 18px;
+            color: #333;
+        }
+        .notification-content p {
+            margin: 0;
+            font-size: 14px;
+            color: #666;
+        }
+        .notification-date {
+            font-size: 12px;
+            color: #999;
+            margin-left: auto;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <div class="logo-container">
+                <div class="logo">Seyidoff Shopp</div>
+                <a href="index.html" class="logo-link">www.seyidoffshopp.github.io</a>
+            </div>
+            <button class="hamburger-menu" aria-label="Menyu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <div class="header-icons">
+                <i class="fas fa-bell"></i>
+                <span class="notification-count">93</span>
+            </div>
+        </div>
+        <div class="search-bar-container">
+            <input type="text" placeholder="Oyun axtar.." class="search-input">
+            <button class="search-button"><i class="fas fa-search"></i></button>
+        </div>
+    </header>
+
+    <nav class="main-nav">
+        <button class="close-menu-btn"><i class="fas fa-times"></i></button>
+        <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i> Ana Səhifə</a></li>
+            <li><a href="#" id="personal-cabinet-btn"><i class="fas fa-user"></i> Şəxsi kabinet</a></li>
+            <li><a href="games.html"><i class="fas fa-gamepad"></i> Oyunlar</a></li>
+            <li><a href="about.html"><i class="fas fa-info-circle"></i> Haqqımızda</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> Əlaqə</a></li>
+            <li><a href="news.html"><i class="fas fa-newspaper"></i> Xəbərlər</a></li>
+            <li><a href="bank_accounts.html"><i class="fas fa-university"></i> Bank Hesab Nömrələri</a></li>
+            <li><a href="help.html"><i class="fas fa-question-circle"></i> Yardım</a></li>
+            <li><a href="rules.html"><i class="fas fa-clipboard-list"></i> Qaydalar</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="notifications-container">
+            <h2>Bildirişlər</h2>
+            <div class="notification-item">
+                <i class="fas fa-gift notification-icon"></i>
+                <div class="notification-content">
+                    <h3>Yeni Kampaniya!</h3>
+                    <p>Free Fire oyununda 20% endirim kampaniyası başladı. Tələsin!</p>
+                </div>
+                <span class="notification-date">10 İyul 2025</span>
+            </div>
+            <div class="notification-item">
+                <i class="fas fa-wallet notification-icon"></i>
+                <div class="notification-content">
+                    <h3>Balansınız Artırıldı</h3>
+                    <p>Balansınıza 50 AZN əlavə edildi. Təsdiq üçün emailinizi yoxlayın.</p>
+                </div>
+                <span class="notification-date">08 İyul 2025</span>
+            </div>
+            <div class="notification-item">
+                <i class="fas fa-exclamation-triangle notification-icon"></i>
+                <div class="notification-content">
+                    <h3>Texniki Baxım</h3>
+                    <p>Saytda qısa müddətli texniki baxım işləri aparılacaq. Anlayışınız üçün təşəkkür edirik.</p>
+                </div>
+                <span class="notification-date">05 İyul 2025</span>
+            </div>
+            <p style="text-align: center; margin-top: 30px; color: #777;">Daha çox bildiriş yükləyin...</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Seyidoff Shopp. Bütün hüquqlar qorunur.</p>
+    </footer>
+
+    <div id="personal-cabinet-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Şəxsi Kabinet</h2>
+            <div class="tab-buttons">
+                <button class="tab-btn active" data-tab="login">Giriş</button>
+                <button class="tab-btn" data-tab="register">Qeydiyyat</button>
+            </div>
+            <div id="login-tab" class="tab-content active">
+                <p>Şəxsi kabinet funksionallığı tezliklə aktiv olacaq.</p>
+                <form>
+                    <label for="login-email">E-mail:</label>
+                    <input type="email" id="login-email" placeholder="E-mailinizi daxil edin">
+                    <label for="login-password">Şifrə:</label>
+                    <input type="password" id="login-password" placeholder="Şifrənizi daxil edin">
+                    <a href="#" class="forgot-password">Şifrəni Unutmusan?</a>
+                    <button type="submit" class="auth-button">Daxil ol</button>
+                </form>
+            </div>
+            <div id="register-tab" class="tab-content">
+                <p>Qeydiyyat funksionallığı tezliklə aktiv olacaq.</p>
+                <form>
+                    <label for="register-email">E-mail:</label>
+                    <input type="email" id="register-email" placeholder="E-mailinizi daxil edin">
+                    <label for="register-password">Şifrə:</label>
+                    <input type="password" id="register-password" placeholder="Şifrənizi daxil edin">
+                    <button type="submit" class="auth-button">Qeydiyyatdan keç</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item active">
+            <i class="fas fa-home"></i>
+            <span>Ana Səhifə</span>
+        </a>
+        <a href="bank_accounts.html" class="nav-item balance-add-button">
+            <i class="fas fa-wallet"></i>
+            <span>Balans Artır</span>
+        </a>
+        <a href="cart.html" class="nav-item">
+            <i class="fas fa-shopping-cart"></i>
+            <span>Səbət</span>
+            <span class="cart-count">0</span>
+        </a>
+        <a href="notifications.html" class="nav-item">
+            <i class="fas fa-bell"></i>
+            <span>Bildirişlər</span>
+            <span class="notification-count-bottom">1</span>
+        </a>
+    </nav>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
