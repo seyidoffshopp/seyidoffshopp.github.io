@@ -4,8 +4,8 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #f0f2f5;
-    color: #34495e;
+    background-color: #f8f9fa; /* Yeniləndi: #f0f2f5 -> #f8f9fa */
+    color: #343a40; /* Yeniləndi: #34495e -> #343a40 */
     line-height: 1.6;
     overflow-x: hidden; /* Mobil cihazlarda horizontal scrollbar-ın qarşısını alır */
     font-size: 16px; /* Əsas şrift ölçüsü (mobil-first) */
@@ -19,7 +19,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 998;
-    border-bottom: 1px solid #e0e6ed;
+    border-bottom: 1px solid #e0e6ed; /* Yaxşı, dəyişməyə ehtiyac yoxdur */
     display: flex; /* Flexbox əlavə et */
     flex-direction: column; /* Mobil üçün elementləri alt-alta yığ */
     align-items: center; /* Mərkəzləşdir */
@@ -50,21 +50,21 @@ header {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.8rem; /* Mobil üçün logo ölçüsünü kiçilt */
     font-weight: 800;
-    color: #007bff;
+    color: #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
     margin-right: 10px; /* Mobil üçün daha az boşluq */
     letter-spacing: -0.8px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .logo-link {
-    color: #889;
+    color: #6c757d; /* Yeniləndi: #889 -> #6c757d (daha təmiz boz) */
     text-decoration: none;
     font-size: 0.8rem; /* Mobil üçün kiçilt */
     transition: color 0.3s ease;
 }
 
 .logo-link:hover {
-    color: #007bff;
+    color: #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
 }
 
 .header-icons {
@@ -78,13 +78,13 @@ header {
 
 .header-icons .fas {
     font-size: 24px; /* Mobil üçün ikon ölçüsü */
-    color: #555;
+    color: #6c757d; /* Yeniləndi: #555 -> #6c757d */
     margin-left: 15px; /* Mobil üçün daha az boşluq */
     cursor: pointer;
     transition: color 0.3s ease, transform 0.2s ease;
 }
 .header-icons .fas:hover {
-    color: #007bff;
+    color: #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
     transform: scale(1.1);
 }
 
@@ -92,7 +92,7 @@ header {
     position: absolute;
     top: -5px; /* Mobil üçün mövqeyini tənzimlə */
     right: -5px;
-    background-color: #ff4d4d;
+    background-color: #dc3545; /* Yeniləndi: #ff4d4d -> #dc3545 (standard qırmızı) */
     color: white;
     font-size: 0.7rem; /* Mobil üçün kiçilt */
     padding: 3px 6px; /* Mobil üçün kiçilt */
@@ -107,7 +107,7 @@ header {
     border: 1px solid #a9d9ff;
     border-radius: 30px;
     padding: 8px 15px; /* Mobil üçün daha az padding */
-    background-color: #f8faff;
+    background-color: #f8faff; /* Yaxşıdır */
     box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.08);
     width: 95%; /* Mobil ekranda daha geniş olsun */
     margin-top: 10px;
@@ -120,24 +120,24 @@ header {
     outline: none;
     background: none;
     font-size: 1rem; /* Mobil üçün şrift ölçüsü */
-    color: #333;
+    color: #343a40; /* Yeniləndi: #333 -> #343a40 */
 }
 
 .search-input::placeholder {
-    color: #99a;
+    color: #adb5bd; /* Yeniləndi: #99a -> #adb5bd (daha təmiz placeholder boz) */
 }
 
 .search-button {
     background: none;
     border: none;
-    color: #007bff;
+    color: #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
     cursor: pointer;
     font-size: 1.1rem; /* Mobil üçün kiçilt */
     padding: 0 8px;
     transition: color 0.3s ease, transform 0.2s ease;
 }
 .search-button:hover {
-    color: #0056b3;
+    color: #1a73e8; /* Yeniləndi: #0056b3 -> #1a73e8 (hover üçün də eyni əsas rəng) */
     transform: scale(1.1);
 }
 
@@ -149,7 +149,7 @@ header {
     cursor: pointer;
     padding: 8px;
     font-size: 28px;
-    color: #333;
+    color: #343a40; /* Yeniləndi: #333 -> #343a40 */
     z-index: 1001;
     transition: transform 0.4s;
     position: absolute; /* header-top-a nisbətən yerləşdirmə */
@@ -163,7 +163,7 @@ header {
     display: block;
     width: 30px;
     height: 4px;
-    background-color: #333;
+    background-color: #343a40; /* Yeniləndi: #333 -> #343a40 */
     margin: 6px 0;
     border-radius: 2px;
     transition: 0.4s;
@@ -199,21 +199,21 @@ header {
     display: flex;
     align-items: center;
     text-decoration: none;
-    color: #444;
+    color: #343a40; /* Yeniləndi: #444 -> #343a40 */
     padding: 15px 20px; /* Mobil menyu üçün padding tənzimləndi */
-    border-bottom: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0; /* Yaxşıdır */
     transition: background-color 0.3s ease, color 0.3s ease;
     font-size: 1.05rem; /* Mobil menyu şrift ölçüsü */
 }
 
 .main-nav ul li a:hover {
-    background-color: #e6f7ff;
-    color: #007bff;
+    background-color: #e6f7ff; /* Yaxşıdır, mavinin açıq tonu */
+    color: #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
 }
 
 .main-nav ul li a .fas {
     margin-right: 15px; /* Mobil menyu ikonu boşluğu tənzimləndi */
-    color: #007bff;
+    color: #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
     font-size: 1.2rem; /* Mobil menyu ikon ölçüsü */
 }
 
@@ -224,7 +224,7 @@ header {
     background: none;
     border: none;
     font-size: 28px; /* Mobil üçün düymə ölçüsü */
-    color: #555;
+    color: #6c757d; /* Yeniləndi: #555 -> #6c757d */
     cursor: pointer;
     z-index: 1002;
     transition: transform 0.3s ease;
@@ -237,8 +237,6 @@ header {
 .hero-banner {
     width: 100%;
     min-height: 250px; /* Mobil üçün daha kiçik hündürlük */
-    /* Background şəkil yerinə Bootstrap Karusel istifadə olunur, ona görə bu hissə şərh olundu */
-    /* background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('banner.png') no-repeat center center/cover; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -280,7 +278,7 @@ header {
 .hero-logo {
     font-size: 3rem; /* Mobil üçün kiçilt */
     font-weight: 900;
-    color: #ffffff;
+    color: #ffffff; /* Ağ qalır */
     margin-bottom: 10px; /* Mobil üçün boşluğu azalt */
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -295,7 +293,7 @@ header {
     font-size: 1.1rem; /* Mobil üçün kiçilt */
     font-style: italic;
     font-weight: 300;
-    color: #f0f0f0;
+    color: #f0f0f0; /* Yaxşıdır */
     animation: slideUp 1.2s ease-out;
 }
 @keyframes slideUp {
@@ -326,22 +324,22 @@ header {
     margin: 0 0 10px 0; /* Mobil üçün aşağıdan boşluq */
     text-align: left;
     font-size: 1.8rem; /* Mobil üçün kiçilt */
-    color: #2c3e50;
+    color: #343a40; /* Yeniləndi: #2c3e50 -> #343a40 */
     font-weight: 700;
 }
 
 .view-all {
     text-decoration: none;
-    color: #007bff;
+    color: #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
     font-weight: 600;
     padding: 6px 15px; /* Mobil üçün padding kiçilt */
-    border: 2px solid #007bff;
+    border: 2px solid #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
     border-radius: 25px;
     transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
     font-size: 0.9rem; /* Mobil üçün şrift ölçüsü */
 }
 .view-all:hover {
-    background-color: #007bff;
+    background-color: #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
     color: white;
     transform: translateY(-2px);
 }
@@ -383,12 +381,12 @@ header {
     transition: border-color 0.3s ease;
 }
 .game-card:hover img {
-    border-color: #007bff;
+    border-color: #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
 }
 
 .game-card h3 {
     font-size: 1.1rem; /* Mobil üçün kiçilt */
-    color: #2c3e50;
+    color: #343a40; /* Yeniləndi: #2c3e50 -> #343a40 */
     margin-bottom: 5px; /* Mobil üçün boşluğu azalt */
     height: 2.8em; /* 2 sətr üçün yer saxlayır */
     overflow: hidden;
@@ -411,7 +409,7 @@ header {
 }
 .page-content h2 {
     text-align: center;
-    color: #0056b3;
+    color: #1a73e8; /* Yeniləndi: #0056b3 -> #1a73e8 (daha yüngül) */
     margin-bottom: 25px; /* Mobil üçün margin tənzimləndi */
     font-size: 2rem; /* Mobil üçün kiçilt */
     font-weight: 700;
@@ -420,12 +418,13 @@ header {
 .page-content h2::after {
     width: 60px; /* Mobil üçün eni kiçilt */
     height: 3px; /* Mobil üçün hündürlüyü kiçilt */
+    background-color: #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
     margin: 10px auto 0; /* Mobil üçün margin tənzimləndi */
 }
 .page-content p {
     font-size: 1rem; /* Mobil üçün kiçilt */
     margin-bottom: 15px; /* Mobil üçün margin tənzimləndi */
-    color: #444;
+    color: #343a40; /* Yeniləndi: #444 -> #343a40 */
 }
 .page-content form {
     padding: 20px; /* Mobil üçün padding kiçilt */
@@ -436,14 +435,17 @@ header {
 }
 .contact-info h3 {
     font-size: 1.4rem; /* Mobil üçün kiçilt */
+    color: #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
 }
 .contact-info p {
     font-size: 0.95rem; /* Mobil üçün kiçilt */
     margin-bottom: 10px; /* Mobil üçün margin tənzimləndi */
+    color: #6c757d; /* Yeniləndi: #555 -> #6c757d */
 }
 .contact-info p .fas {
     margin-right: 8px; /* Mobil üçün margin tənzimləndi */
     font-size: 1.1rem; /* Mobil üçün kiçilt */
+    color: #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
 }
 
 
@@ -457,10 +459,12 @@ header {
 .game-detail-content h2 {
     font-size: 2rem; /* Mobil üçün kiçilt */
     margin-bottom: 20px;
+    color: #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
 }
 .game-detail-content p {
     font-size: 1rem; /* Mobil üçün kiçilt */
     margin-bottom: 20px;
+    color: #6c757d; /* Yeniləndi: #555 -> #6c757d */
 }
 .game-detail-content ul {
     padding-top: 15px;
@@ -468,6 +472,7 @@ header {
 .game-detail-content ul li {
     padding: 10px; /* Mobil üçün padding kiçilt */
     font-size: 1rem; /* Mobil üçün kiçilt */
+    color: #343a40; /* Yeniləndi: #333 -> #343a40 */
 }
 
 .purchase-options {
@@ -477,6 +482,7 @@ header {
 
 .purchase-options label {
     font-size: 0.95rem; /* Mobil üçün kiçilt */
+    color: #343a40; /* Yeniləndi: #333 -> #343a40 */
 }
 
 .purchase-options input[type="text"],
@@ -500,23 +506,42 @@ header {
 }
 
 .price-bonus-row .quantity-control button {
+    background-color: #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
+    color: white;
+    border: none;
+    border-radius: 8px;
     padding: 6px 12px; /* Mobil üçün padding kiçilt */
+    cursor: pointer;
     font-size: 1.1rem; /* Mobil üçün kiçilt */
+    line-height: 1;
+    margin: 0 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.price-bonus-row .quantity-control button:hover {
+    background-color: #145cb3; /* Yeniləndi: #0056b3 -> #145cb3 (tünd mavi) */
+    transform: scale(1.05);
 }
 
 .price-bonus-row .quantity-display {
+    font-weight: bold;
     font-size: 1.1rem; /* Mobil üçün kiçilt */
+    color: #343a40; /* Yeniləndi: #333 -> #343a40 */
+    min-width: 40px;
+    text-align: center;
 }
 
 .price-bonus-row .price-info {
     font-size: 1.1rem; /* Mobil üçün kiçilt */
     width: 100%; /* Tam genişlik */
     justify-content: center; /* Mərkəzləşdir */
+    font-weight: bold;
+    color: #28a745; /* Yaşıl, yaxşıdır */
 }
 
 .price-bonus-row .price-info .bonus {
     margin-left: 10px; /* Mobil üçün margin tənzimləndi */
     font-size: 0.95rem; /* Mobil üçün kiçilt */
+    color: #ffc107; /* Sarı, yaxşıdır */
 }
 
 .payment-methods {
@@ -526,6 +551,7 @@ header {
 .payment-methods h4 {
     font-size: 1.2rem; /* Mobil üçün kiçilt */
     margin-bottom: 20px;
+    color: #343a40; /* Yeniləndi: #333 -> #343a40 */
 }
 
 .payment-method-grid {
@@ -536,18 +562,40 @@ header {
 .payment-method-item {
     padding: 15px; /* Mobil üçün padding kiçilt */
     border-radius: 10px; /* Mobil üçün radius kiçilt */
+    background-color: #fdfdff; /* Yaxşıdır */
+    border: 2px solid #e0e0e0;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.payment-method-item:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-color: #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
+    transform: translateY(-3px);
+}
+
+.payment-method-item.selected {
+    border-color: #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
+    background-color: #e6f7ff; /* Yaxşıdır */
+    box-shadow: 0 0 0 3px #a9d9ff, 0 5px 15px rgba(0,0,0,0.1); /* Yaxşıdır */
 }
 
 .payment-method-item .method-icon {
     font-size: 3rem; /* Mobil üçün kiçilt */
     margin-bottom: 10px;
+    color: #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
 }
 
 .payment-method-item .method-name {
+    font-weight: bold;
     font-size: 1rem; /* Mobil üçün kiçilt */
+    color: #343a40; /* Yeniləndi: #333 -> #343a40 */
 }
 .payment-method-item .method-desc {
     font-size: 0.8rem; /* Mobil üçün kiçilt */
+    color: #6c757d; /* Yeniləndi: #777 -> #6c757d */
 }
 
 .order-buttons {
@@ -559,12 +607,49 @@ header {
 .order-buttons button {
     padding: 12px 20px; /* Mobil üçün padding kiçilt */
     font-size: 1.1rem; /* Mobil üçün kiçilt */
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.order-buttons .order-confirm-button {
+    background-color: #28a745; /* Yaşıl, yaxşıdır */
+    color: white;
+}
+
+.order-buttons .order-confirm-button:hover {
+    background-color: #218838; /* Yaşılın tünd tonu, yaxşıdır */
+    transform: translateY(-2px);
+}
+
+.order-buttons .order-cancel-button {
+    background-color: #dc3545; /* Qırmızı, yaxşıdır */
+    color: white;
+}
+
+.order-buttons .order-cancel-button:hover {
+    background-color: #c82333; /* Qırmızının tünd tonu, yaxşıdır */
+    transform: translateY(-2px);
 }
 
 .whatsapp-button {
+    display: inline-flex;
+    align-items: center;
+    background-color: #25D366; /* WhatsApp yaşılı, yaxşıdır */
+    color: white;
+    text-decoration: none;
     padding: 12px 20px; /* Mobil üçün padding kiçilt */
+    border-radius: 10px;
     font-size: 1.1rem; /* Mobil üçün kiçilt */
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
     margin-top: 20px;
+    width: 100%;
+    justify-content: center;
+    box-sizing: border-box;
 }
 
 .whatsapp-button i {
@@ -572,55 +657,157 @@ header {
     font-size: 1.3rem; /* Mobil üçün kiçilt */
 }
 
+.whatsapp-button:hover {
+    background-color: #1DA851; /* WhatsApp yaşılının tünd tonu, yaxşıdır */
+    transform: translateY(-2px);
+}
+
 .modal {
+    display: none;
+    position: fixed;
+    z-index: 1003;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6);
     padding-top: 50px; /* Mobil üçün yuxarıdan boşluğu azalt */
 }
 
 .modal-content {
+    background-color: #fefefe;
     margin: 30px auto; /* Mobil üçün margin tənzimləndi */
     padding: 20px; /* Mobil üçün padding kiçilt */
+    border: 1px solid #ddd;
     width: 95%; /* Mobil üçün daha geniş */
     max-width: 400px; /* Maksimum genişliyi tənzimlə */
+    border-radius: 12px;
+    position: relative;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+    animation-name: animatetop;
+    animation-duration: 0.5s
 }
+
 @keyframes animatetop {
     from {top: -500px; opacity: 0}
     to {top: 30px; opacity: 1} /* Mobil üçün son mövqeyini tənzimlə */
 }
 
 .close-button {
+    color: #adb5bd; /* Yeniləndi: #aaa -> #adb5bd */
+    float: right;
     font-size: 28px; /* Mobil üçün kiçilt */
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
     top: 10px;
     right: 15px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #343a40; /* Yeniləndi: #333 -> #343a40 */
+    text-decoration: none;
+    transform: rotate(90deg);
 }
 
 .modal-content h2 {
+    text-align: center;
+    margin-bottom: 20px; /* Mobil üçün margin kiçilt */
+    color: #343a40; /* Yeniləndi: #333 -> #343a40 */
     font-size: 1.8rem; /* Mobil üçün kiçilt */
-    margin-bottom: 20px;
+    font-weight: 700;
 }
 
 .tab-buttons {
-    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px; /* Mobil üçün margin kiçilt */
+    background-color: #e6f7ff; /* Yaxşıdır */
+    border-radius: 8px;
     padding: 3px; /* Mobil üçün padding kiçilt */
 }
 
 .tab-btn {
+    background-color: transparent;
+    border: none;
     padding: 10px 15px; /* Mobil üçün padding kiçilt */
+    cursor: pointer;
     font-size: 0.95rem; /* Mobil üçün kiçilt */
+    font-weight: 600;
+    flex-grow: 1;
+    border-radius: 6px;
+    margin: 0 3px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.tab-btn.active {
+    background-color: #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
+    color: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.tab-btn:hover:not(.active) {
+    background-color: #dbe9f5; /* Yaxşıdır */
+}
+
+.tab-content {
+    display: none;
+    padding-top: 15px;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.modal-content form label {
+    text-align: left;
+    margin-top: 15px;
 }
 
 .modal-content form input {
+    width: calc(100% - 22px);
     padding: 10px; /* Mobil üçün padding kiçilt */
     margin-bottom: 15px;
+    border: 1px solid #cceeff;
+    border-radius: 8px;
+    box-sizing: border-box;
+    background-color: #f8faff; /* Yaxşıdır */
     font-size: 0.95rem; /* Mobil üçün kiçilt */
 }
 
 .modal-content .auth-button {
+    background-color: #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
+    color: white;
+    border: none;
     padding: 12px 20px; /* Mobil üçün padding kiçilt */
+    border-radius: 10px;
+    cursor: pointer;
     font-size: 1.05rem; /* Mobil üçün kiçilt */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%;
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+.modal-content .auth-button:hover {
+    background-color: #145cb3; /* Yeniləndi: #0056b3 -> #145cb3 */
+    transform: translateY(-2px);
 }
 
 .forgot-password {
+    display: block;
+    text-align: right;
     font-size: 0.85rem; /* Mobil üçün kiçilt */
+    color: #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
+    text-decoration: none;
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+}
+.forgot-password:hover {
+    color: #145cb3; /* Yeniləndi: #0056b3 -> #145cb3 */
 }
 
 .bottom-nav {
@@ -643,7 +830,7 @@ header {
     flex-direction: column;
     align-items: center;
     text-decoration: none;
-    color: #777;
+    color: #6c757d; /* Yeniləndi: #777 -> #6c757d */
     font-size: 0.8rem; /* Mobil üçün kiçilt */
     padding: 3px;
     transition: color 0.3s ease, transform 0.2s ease;
@@ -652,11 +839,11 @@ header {
 
 .nav-item:hover {
     transform: translateY(-3px); /* Mobil üçün daha az hərəkət */
-    color: #007bff;
+    color: #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
 }
 
 .nav-item.active {
-    color: #007bff;
+    color: #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
     transform: translateY(-2px);
 }
 
@@ -670,16 +857,33 @@ header {
     padding: 2px 5px; /* Mobil üçün kiçilt */
     top: 0px; /* Mobil üçün mövqeyini tənzimlə */
     right: 0px;
+    background-color: #dc3545; /* Yeniləndi: #e74c3c -> #dc3545 */
+    color: white;
+    border: 2px solid white;
+    border-radius: 50%;
+    font-weight: bold;
+    transform: translate(50%, -50%);
+    position: absolute;
 }
 
 .balance-add-button {
     width: 50px; /* Mobil üçün kiçilt */
     height: 50px; /* Mobil üçün kiçilt */
     font-size: 1.8rem; /* Mobil üçün kiçilt */
+    background-color: transparent;
+    color: #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: none;
+    position: static;
+    top: auto;
 }
 
 .balance-add-button .fas {
-    font-size: 1.6rem; /* Mobil üçün kiçilt */
+    color: #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
+    margin: 0;
 }
 
 /* New styles for cart.html */
@@ -693,58 +897,133 @@ header {
 }
 
 .cart-item {
+    display: flex;
+    flex-direction: column;
     padding: 10px;
+    border-bottom: 1px solid #f0f0f0; /* Yaxşıdır */
     margin-bottom: 8px;
+    background-color: #f8faff; /* Yaxşıdır */
+    border-radius: 8px;
+    position: relative;
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
 }
 
 .cart-item p {
+    margin: 5px 0;
     font-size: 0.9rem;
+    color: #6c757d; /* Yeniləndi: #444 -> #6c757d */
 }
 
 .cart-item strong {
     font-size: 1rem;
+    color: #343a40; /* Yeniləndi: #2c3e50 -> #343a40 */
 }
 
 .remove-from-cart-btn {
+    background-color: #dc3545; /* Yeniləndi: #e74c3c -> #dc3545 */
+    color: white;
+    border: none;
     padding: 6px 10px;
+    border-radius: 5px;
+    cursor: pointer;
     font-size: 0.8rem;
+    align-self: flex-end;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.remove-from-cart-btn:hover {
+    background-color: #c82333; /* Yeniləndi: #c0392b -> #c82333 */
 }
 
 #cart-summary {
     margin-top: 15px;
+    text-align: right;
     font-size: 1.1rem;
+    font-weight: bold;
+    color: #343a40; /* Yeniləndi: #2c3e50 -> #343a40 */
     padding-top: 10px;
+    border-top: 1px solid #eee;
 }
 
 #total-price {
+    color: #28a745; /* Yaşıl, yaxşıdır */
     font-size: 1.2rem;
 }
 
 #clear-cart-btn {
+    background-color: #ffc107; /* Yeniləndi: #f39c12 -> #ffc107 (sarı) */
+    color: white;
+    border: none;
     padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
     font-size: 0.9rem;
     margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+#clear-cart-btn:hover {
+    background-color: #e0a800; /* Yeniləndi: #e67e22 -> #e0a800 (tünd sarı) */
 }
 
 #checkout-form {
     margin-top: 20px;
     padding-top: 15px;
+    border-top: 1px solid #eee;
 }
 
-#checkout-form input {
+#checkout-form label {
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #343a40; /* Yeniləndi: #333 -> #343a40 */
+}
+
+#checkout-form input[type="text"],
+#checkout-form input[type="email"],
+#checkout-form input[type="tel"] {
+    width: 100%;
     padding: 10px;
     margin-bottom: 12px;
+    border: 1px solid #cceeff;
+    border-radius: 8px;
     font-size: 0.95rem;
+    box-sizing: border-box;
 }
 
 .primary-button {
+    background-color: #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
+    color: white;
+    border: none;
     padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
     font-size: 1rem;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    font-weight: bold;
+}
+
+.primary-button:hover {
+    background-color: #145cb3; /* Yeniləndi: #0056b3 -> #145cb3 */
 }
 
 .secondary-button {
+    background-color: #6c757d; /* Boz, yaxşıdır */
+    color: white;
+    border: none;
     padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
     font-size: 0.85rem;
+    transition: background-color 0.3s ease;
+}
+.secondary-button:hover {
+    background-color: #5a6268; /* Bozun tünd tonu, yaxşıdır */
 }
 
 
@@ -792,12 +1071,14 @@ header {
     .header-icons .fas {
         font-size: 28px;
         margin-left: 20px;
+        color: #6c757d; /* Yeniləndi: #555 -> #6c757d */
     }
     .notification-count {
         top: -10px;
         right: -10px;
         font-size: 0.8rem;
         padding: 4px 8px;
+        background-color: #dc3545; /* Yeniləndi: #ff4d4d -> #dc3545 */
     }
 
     .search-bar-container {
@@ -810,9 +1091,11 @@ header {
     }
     .search-input {
         font-size: 1.1rem;
+        color: #343a40; /* Yeniləndi: #333 -> #343a40 */
     }
     .search-button {
         font-size: 1.3rem;
+        color: #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
     }
 
     /* MAIN NAV (Desktop) */
@@ -840,13 +1123,14 @@ header {
     }
     .main-nav ul li a {
         padding: 10px 0;
-        color: #444; /* Normal rəng */
+        color: #343a40; /* Yeniləndi: #444 -> #343a40 */
         font-weight: normal; /* Normal çəki */
         font-size: 1rem;
     }
     .main-nav ul li a .fas {
         margin-right: 8px; /* İkonlar və mətn arasında daha az boşluq */
         font-size: 1.1rem; /* İkon ölçüsü */
+        color: #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
     }
 
     /* MAIN CONTENT */
@@ -864,15 +1148,18 @@ header {
     .page-content h2, .game-detail-content h2, .notifications-container h2 {
         font-size: 2.5rem; /* Normal ölçüyə qayıt */
         margin-bottom: 40px;
+        color: #1a73e8; /* Yeniləndi: #0056b3 -> #1a73e8 */
     }
     .page-content h2::after {
         width: 80px; /* Normal en */
         height: 4px; /* Normal hündürlük */
+        background-color: #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
         margin: 15px auto 0;
     }
     .page-content p {
         font-size: 1.15rem; /* Normal ölçüyə qayıt */
         margin-bottom: 20px;
+        color: #343a40; /* Yeniləndi: #444 -> #343a40 */
     }
     .page-content form {
         padding: 30px;
@@ -883,14 +1170,17 @@ header {
     }
     .contact-info h3 {
         font-size: 1.6rem;
+        color: #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
     }
     .contact-info p {
         font-size: 1.05rem;
         margin-bottom: 12px;
+        color: #6c757d; /* Yeniləndi: #555 -> #6c757d */
     }
     .contact-info p .fas {
         margin-right: 12px;
         font-size: 1.2rem;
+        color: #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
     }
 
 
@@ -930,10 +1220,16 @@ header {
     }
     .categories-header h2 {
         font-size: 2rem; /* Normal ölçüyə qayıt */
+        color: #343a40; /* Yeniləndi: #2c3e50 -> #343a40 */
     }
     .view-all {
         padding: 8px 18px;
         font-size: 1rem;
+        color: #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
+        border: 2px solid #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
+    }
+    .view-all:hover {
+        background-color: #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
     }
     .game-listing {
         gap: 30px; /* Normal boşluq */
@@ -955,10 +1251,14 @@ header {
         border-radius: 12px;
         margin-bottom: 15px;
     }
+    .game-card:hover img {
+        border-color: #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
+    }
     .game-card h3 {
         font-size: 1.3rem;
         margin-bottom: 8px;
         height: 3.2em;
+        color: #343a40; /* Yeniləndi: #2c3e50 -> #343a40 */
     }
 
     /* GAME DETAIL PAGE */
@@ -969,14 +1269,17 @@ header {
     .game-detail-content h2 {
         font-size: 2.4rem;
         margin-bottom: 25px;
+        color: #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
     }
     .game-detail-content p {
         font-size: 1.05rem;
         margin-bottom: 25px;
+        color: #6c757d; /* Yeniləndi: #555 -> #6c757d */
     }
     .game-detail-content ul li {
         padding: 12px;
         font-size: 1.15rem;
+        color: #343a40; /* Yeniləndi: #333 -> #343a40 */
     }
     .purchase-options {
         margin-top: 30px;
@@ -984,6 +1287,7 @@ header {
     }
     .purchase-options label {
         font-size: 1rem;
+        color: #343a40; /* Yeniləndi: #333 -> #343a40 */
     }
     .purchase-options input[type="text"],
     .purchase-options input[type="email"] {
@@ -998,171 +1302,149 @@ header {
         margin-bottom: 25px;
         padding: 15px;
     }
-    .price-bonus-row .quantity-control {
-        width: auto;
-        margin-bottom: 0;
-        justify-content: flex-start;
-    }
     .price-bonus-row .quantity-control button {
-        padding: 8px 15px;
-        font-size: 1.3rem;
+        background-color: #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
+    }
+    .price-bonus-row .quantity-control button:hover {
+        background-color: #145cb3; /* Yeniləndi: #0056b3 -> #145cb3 */
     }
     .price-bonus-row .quantity-display {
         font-size: 1.3rem;
+        color: #343a40; /* Yeniləndi: #333 -> #343a40 */
     }
     .price-bonus-row .price-info {
         font-size: 1.25rem;
-        width: auto;
-        justify-content: flex-start;
+        color: #28a745; /* Yaşıl, yaxşıdır */
     }
     .price-bonus-row .price-info .bonus {
-        margin-left: 20px;
         font-size: 1.1rem;
-    }
-    .payment-methods {
-        margin-top: 35px;
+        color: #ffc107; /* Sarı, yaxşıdır */
     }
     .payment-methods h4 {
         font-size: 1.4rem;
-        margin-bottom: 25px;
+        color: #343a40; /* Yeniləndi: #333 -> #343a40 */
     }
-    .payment-method-grid {
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-        gap: 20px;
+    .payment-method-item:hover {
+        border-color: #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
     }
-    .payment-method-item {
-        padding: 20px;
-        border-radius: 12px;
+    .payment-method-item.selected {
+        border-color: #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
     }
     .payment-method-item .method-icon {
-        font-size: 3.5rem;
-        margin-bottom: 15px;
+        color: #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
     }
     .payment-method-item .method-name {
-        font-size: 1.1rem;
+        color: #343a40; /* Yeniləndi: #333 -> #343a40 */
     }
-    .payment-method-item .method-desc {
-        font-size: 0.9rem;
+    .order-buttons .order-confirm-button {
+        background-color: #28a745; /* Yaşıl, yaxşıdır */
     }
-    .order-buttons {
-        flex-direction: row; /* Normal vəziyyətə qaytar */
-        gap: 20px;
-        margin-top: 40px;
-    }
-    .order-buttons button {
-        padding: 15px 25px;
-        font-size: 1.2rem;
+    .order-buttons .order-cancel-button {
+        background-color: #dc3545; /* Qırmızı, yaxşıdır */
     }
     .whatsapp-button {
-        padding: 15px 30px;
-        font-size: 1.2rem;
-        margin-top: 25px;
+        background-color: #25D366; /* WhatsApp yaşılı, yaxşıdır */
     }
-    .whatsapp-button i {
-        margin-right: 15px;
-        font-size: 1.5rem;
+    .whatsapp-button:hover {
+        background-color: #1DA851; /* WhatsApp yaşılının tünd tonu, yaxşıdır */
     }
 
     /* MODAL */
-    .modal {
-        padding-top: 80px;
-    }
     .modal-content {
-        margin: 5% auto;
-        padding: 30px;
-        width: 90%;
-        max-width: 450px;
-    }
-    @keyframes animatetop {
-        from {top: -500px; opacity: 0}
-        to {top: 5%; opacity: 1}
+        background-color: #fefefe;
     }
     .close-button {
-        font-size: 32px;
-        top: 15px;
-        right: 20px;
+        color: #adb5bd; /* Yeniləndi: #aaa -> #adb5bd */
+    }
+    .close-button:hover,
+    .close-button:focus {
+        color: #343a40; /* Yeniləndi: #333 -> #343a40 */
     }
     .modal-content h2 {
-        font-size: 2rem;
-        margin-bottom: 25px;
+        color: #343a40; /* Yeniləndi: #333 -> #343a40 */
     }
     .tab-buttons {
-        margin-bottom: 25px;
-        padding: 5px;
+        background-color: #e6f7ff; /* Yaxşıdır */
     }
-    .tab-btn {
-        padding: 12px 25px;
-        font-size: 1.05rem;
+    .tab-btn.active {
+        background-color: #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
+    }
+    .tab-btn:hover:not(.active) {
+        background-color: #dbe9f5; /* Yaxşıdır */
     }
     .modal-content form input {
-        padding: 12px;
-        margin-bottom: 18px;
-        font-size: 1rem;
+        background-color: #f8faff; /* Yaxşıdır */
     }
     .modal-content .auth-button {
-        padding: 15px 25px;
-        font-size: 1.15rem;
+        background-color: #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
+    }
+    .modal-content .auth-button:hover {
+        background-color: #145cb3; /* Yeniləndi: #0056b3 -> #145cb3 */
     }
     .forgot-password {
-        font-size: 0.95rem;
+        color: #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
+    }
+    .forgot-password:hover {
+        color: #145cb3; /* Yeniləndi: #0056b3 -> #145cb3 */
+    }
+
+    .nav-item {
+        color: #6c757d; /* Yeniləndi: #777 -> #6c757d */
+    }
+    .nav-item:hover {
+        color: #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
+    }
+    .nav-item.active {
+        color: #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
+    }
+    .cart-count, .notification-count-bottom {
+        background-color: #dc3545; /* Yeniləndi: #e74c3c -> #dc3545 */
+    }
+    .balance-add-button {
+        color: #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
+    }
+    .balance-add-button .fas {
+        color: #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
     }
 
     /* CART PAGE */
-    .cart-page-content {
-        padding-bottom: 0; /* Masaüstündə bottom nav olmadığı üçün padding sıfırlanır */
-    }
-    #cart-items-container {
-        margin-top: 20px;
-        padding: 15px;
-    }
-    .cart-item {
-        flex-direction: row; /* Normalda yan-yana */
-        justify-content: space-between; /* Elementləri aralı qoy */
-        align-items: center;
-        padding: 15px;
-        margin-bottom: 10px;
-    }
     .cart-item p {
-        margin: 0;
-        font-size: 1rem;
+        color: #6c757d; /* Yeniləndi: #444 -> #6c757d */
     }
     .cart-item strong {
-        font-size: 1.1rem;
+        color: #343a40; /* Yeniləndi: #2c3e50 -> #343a40 */
     }
     .remove-from-cart-btn {
-        align-self: center; /* Mərkəzləşdir */
-        margin-top: 0;
-        padding: 8px 12px;
-        font-size: 0.9rem;
+        background-color: #dc3545; /* Yeniləndi: #e74c3c -> #dc3545 */
+    }
+    .remove-from-cart-btn:hover {
+        background-color: #c82333; /* Yeniləndi: #c0392b -> #c82333 */
     }
     #cart-summary {
-        margin-top: 20px;
-        font-size: 1.2rem;
-        padding-top: 15px;
+        color: #343a40; /* Yeniləndi: #2c3e50 -> #343a40 */
     }
     #total-price {
-        font-size: 1.3rem;
+        color: #28a745; /* Yaşıl, yaxşıdır */
     }
     #clear-cart-btn {
-        padding: 10px 18px;
-        font-size: 1rem;
-        margin-top: 15px;
+        background-color: #ffc107; /* Yeniləndi: #f39c12 -> #ffc107 */
     }
-    #checkout-form {
-        margin-top: 30px;
-        padding-top: 20px;
+    #clear-cart-btn:hover {
+        background-color: #e0a800; /* Yeniləndi: #e67e22 -> #e0a800 */
     }
-    #checkout-form input {
-        padding: 12px;
-        margin-bottom: 15px;
-        font-size: 1rem;
+    #checkout-form label {
+        color: #343a40; /* Yeniləndi: #333 -> #343a40 */
     }
     .primary-button {
-        padding: 12px 20px;
-        font-size: 1.1rem;
+        background-color: #1a73e8; /* Yeniləndi: #007bff -> #1a73e8 */
+    }
+    .primary-button:hover {
+        background-color: #145cb3; /* Yeniləndi: #0056b3 -> #145cb3 */
     }
     .secondary-button {
-        padding: 10px 15px;
-        font-size: 0.95rem;
+        background-color: #6c757d; /* Boz, yaxşıdır */
+    }
+    .secondary-button:hover {
+        background-color: #5a6268; /* Bozun tünd tonu, yaxşıdır */
     }
 }
