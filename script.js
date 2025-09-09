@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Oyun/Xidmət Məlumatları - Şəkil yolları düzəldildi
+    // Oyun/Xidmət Məlumatları - Şəkil yolları tam düzəldildi
     const gameListing = document.getElementById('game-listing');
     const games = [
         { id: 1, name: 'FREE FIRE DIAMOND', image: 'img/ff.jpg', description: 'Free Fire üçün diamond paketi. Dərhal hesabınıza yükləyin!', prices: [{ quantity: 100, amount: 2.00 }, { quantity: 210, amount: 4.00 }, { quantity: 340, amount: 6.00 }, { quantity: 560, amount: 9.00 }, { quantity: 680, amount: 11.00 }, { quantity: 900, amount: 14.00 }, { quantity: 1150, amount: 17.00 }, { quantity: 1490, amount: 22.00 }, { quantity: 1720, amount: 26.00 }, { quantity: 2060, amount: 30.00 }, { quantity: 2380, amount: 33.00 }, { quantity: 2950, amount: 41.00 }, { quantity: 'Həftəlik 450', amount: 3.00 }, { quantity: 'Aylıq 2600', amount: 11.00 }], type: 'id_input' },
@@ -77,8 +77,11 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     }
-
-    displayGames();
+    
+    // Yalnız ana səhifədə oyunları göstər
+    if (window.location.pathname === '/' || window.location.pathname.endsWith('index.html')) {
+        displayGames();
+    }
 
     // Səbət və Bildiriş sayı
     function updateCartCount() {
@@ -262,7 +265,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const plusBtn = gameDetailContainer.querySelector('.plus-btn');
                 const currentPriceSpan = gameDetailContainer.querySelector('.current-price');
                 let currentQuantityIndex = 0;
-
+                
                 if (game.prices.length > 0) {
                     currentPriceSpan.textContent = `${game.prices[currentQuantityIndex].amount} Azn`;
                     quantityDisplay.textContent = game.prices[currentQuantityIndex].quantity;
