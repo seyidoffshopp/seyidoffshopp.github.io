@@ -256,7 +256,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 ${purchaseOptionsHtml}
             `;
 
-            // Miqdar artırma/azaltma və ödəniş seçimi üçün event listenerlər
             if (game.type === 'id_input') {
                 const quantityDisplay = gameDetailContainer.querySelector('.quantity-display');
                 const minusBtn = gameDetailContainer.querySelector('.minus-btn');
